@@ -1,5 +1,6 @@
 Design
 ===
+```
 EdCamps
 ├── About
 │   ├── Mission
@@ -38,6 +39,7 @@ EdCamps
         ├── each post_id relates to an user_id
         ├── each thread_id has a list of children, which are forum_posts (post_id)
         └── might need category table (for different thread topics)
+```
 
 TODO
 ===
