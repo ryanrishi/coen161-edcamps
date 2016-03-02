@@ -15,7 +15,7 @@ EdCamps
 │   └── link to register (form)
 ├── Store
 │   ├── database
-│   │   ├── table: store_items (item_id, item_name, item_price, item_stock_remaining)
+│   │   ├── table: inventory (item_id, item_name, item_price, item_stock_remaining)
 |   |   └── database relations: TBD
 │   └── link to register
 ├── Forum
