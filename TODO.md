@@ -43,5 +43,5 @@ EdCamps
 
 TODO
 ===
-- create database tables (Ryan)
+- ~~create database tables (Ryan)~~
 - create content (activities, fake forum posts)
