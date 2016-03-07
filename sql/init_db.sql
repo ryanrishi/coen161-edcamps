@@ -7,30 +7,30 @@ USE edcamps;
 
 CREATE TABLE activities(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(20),
-  description VARCHAR(160)
+  name VARCHAR(20) NOT NULL,
+  description VARCHAR(160) NOT NULL
 );
 
 CREATE TABLE campsites(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  address_id INT,
+  address_id INT NOT NULL,
   phone VARCHAR(10)
 );
 
 CREATE TABLE addresses(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  address_1 VARCHAR(80),
+  address_1 VARCHAR(80) NOT NULL,
   address_2 VARCHAR(80),
   address_3 VARCHAR(30),
-  city VARCHAR(20),
-  state VARCHAR(20),
+  city VARCHAR(20) NOT NULL,
+  state VARCHAR(20) NOT NULL,
   zip INT
 );
 
 CREATE TABLE inventory(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(20),
-  price DECIMAL(13,4),
+  name VARCHAR(20) NOT NULL,
+  price DECIMAL(13,4) NOT NULL,
   remaining INT
 );
 
