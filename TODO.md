@@ -45,3 +45,9 @@ TODO
 ===
 - ~~create database tables (Ryan)~~
 - create content (activities, fake forum posts)
+- registration
+  - make DOB datepicker / find a datepicker library
+  - JS form validation
+  - credit card drop-in UI
+  - sessions and locations -- select a location, then select a session from a new dropdown
+  - format DOB on server-side (register.php)
