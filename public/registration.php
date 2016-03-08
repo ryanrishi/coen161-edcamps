@@ -32,10 +32,21 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="camper-information">
       <h3>Camper Information</h3>
       <hr>
-      <p>First&nbsp;<input type="text" name="camper_first_name" value=""></p>
-      <p>Last&nbsp;<input type="text" name="camper_last_name" value=""></p>
-      <p>Date of Birth&nbsp;<input type="text" class="date" name="camper_dob" value="mm/dd/yyyy"></p>
-      <p>Grade level&nbsp;
+      <div class="form-group">
+        <label>First</label>
+        <input type="text" name="camper_first_name" value="" placeholder="First">
+      </div>
+      <div class="form-group">
+        <label>Last</label>
+        <input type="text" name="camper_last_name" value="" placeholder="Last">
+      </div>
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="text" class="date datepicker" name="camper_dob" placeholder="mm/dd/yyyy">
+      </div>
+      <div class="form-group">
+        <label>Grade level</label>
+
         <select name="camper_grade">
           <?php
           $supported_grades = array("K", 1, 2, 3, 4, 5);
@@ -44,9 +55,13 @@ require_once(TEMPLATES_PATH . "/header.php");
           }
           ?>
         </select>
-      </p>
-      <p>Allergies, notes, etc.&nbsp;<input type="text" name="camper_notes" value=""></p>
-      <p>Camp location&nbsp;
+      </div>
+      <div class="form-group">
+        <label>Allergies, notes, etc.</label>
+        <input type="text" name="camper_notes" value="">
+      </div>
+      <div class="form-group">
+        <label>Camp location</label>
         <select class="campsite-location" name="campsite_location" onchange="showSessionsForSelectedLocation()">
           <?php
           require_once("helpers/db.php");
@@ -63,9 +78,9 @@ require_once(TEMPLATES_PATH . "/header.php");
             $campsite_name = $row['name'];
             echo "<option value=$campsite_id>$campsite_name</option>";
           }
-          // TODO when a user selects a location, populate sessions
           ?>
         </select>
+      </div>
         <div class="active-sessions-for-selected-location">
           <!-- this will be populated when user selects a campsite locaation -->
         </div>
@@ -92,27 +107,66 @@ require_once(TEMPLATES_PATH . "/header.php");
                 input.setAttribute('name', 'session');
                 input.setAttribute('value', d.id);
                 $sessions.append(input);
-                $sessions.append('&nbsp;' + d.start + ' - ' + d.end); // TODO format dates
+                $sessions.append('&nbsp;Session ' + d.id + ' (' + d.start + ' - ' + d.end + ')'); // TODO format dates
               });
             }
           });
         }
+        </script>
+        <script src="js/validate.js"></script>
+        <script>
+        function emailDidChange() {
+          var $email = $('.registration-form .email');
+          var emailAddress = $email.val();
+          if (!validateEmailAddress(emailAddress)) {
+            alert('The email address you entered is not valid.');
+            $email.addClass('error');
+            return;
+          }
+          $email.removeClass('error');
+        }
+
+        function phoneDidChange() {
+          var $phone = $('.registration-form .phone-number');
+          var phoneNumber = $phone.val();
+          if (!validatePhoneNumber(phoneNumber)) {
+            alert('The phone number you entered is not valid');
+            $phone.addClass('error');
+            return;
+          }
+          $phone.removeClass('error');
+        }
+
         </script>
       </div>
 
       <div class="parent-information">
         <h3>Parent Information</h3>
         <hr>
-        <p>First&nbsp;<input type="text" name="parent_first_name" value=""></p>
-        <p>Last&nbsp;<input type="text" name="parent_last_name" value=""></p>
-        <p>Email&nbsp;<input type="text" class="email" name="parent_email" value=""></p>
-        <p>Phone&nbsp;<input type="text" class="phone-number" name="parent_phone" value=""></p>
+        <div class="form-group">
+          <label>First</label>
+          <input type="text" name="parent_first_name" value="" placeholder="First">
+        </div>
+        <div class="form-group">
+          <label>Last</label>
+          <input type="text" name="parent_last_name" value="" placeholder="Last">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="email" name="parent_email" value="" onchange="emailDidChange()" placeholder="email">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" class="phone-number" name="parent_phone" value="" onchange="phoneDidChange()" placeholder="(XXX) XXX-XXXX">
+        </div>
       </div>
 
       <div class="payment-information">
         <h3>Payment Information</h3>
         <hr>
-        <p>Card Type&nbsp;
+        <div class="form-group">
+          <label>Card Type</label>
+
           <select class="" name="card_type">
             <?php
             $supported_cards = array("MasterCard", "Visa", "Discover", "American Express");
@@ -121,30 +175,27 @@ require_once(TEMPLATES_PATH . "/header.php");
             }
             ?>
           </select>
-        </p>
-        <p>Card Number&nbsp;<input type="text" name="card_number" value=""></p>
-        <p>Expiration Date&nbsp;<input type="text" name="card_exp" value=""></p>
-        <p>CVV&nbsp;<input type="text" name="card_cvv" value=""></p>
+        </div>
+        <div class="form-group">
+          <label>Card Number</label>
+          <input type="text" name="card_number" value="" placeholder="XXXX XXXX XXXX XXXX">
+        </div>
+        <div class="form-group">
+          <label>Expiration Date</label>
+          <input class="date datepicker" type="text" name="card_exp" value="" placeholder="mm/yyyy">
+        </div>
+        <div class="form-group">
+          <label>CVV</label>
+          <input type="text" name="card_cvv" value="" placehodler="XXX">
+        </div>
       </div>
 
       <input type="button" name="submit" value="Submit" class="btn">
     </form>
-
-    <?php
-    require_once("helpers/db.php");
-
-    $conn = get_db_conn();
-
-    $sql = "SELECT * FROM activities";
-    $result = $conn->query($sql);
-
-    if (!$result) {
-      echo "ERROR: " . mysqli_error($conn);
-    }
-
-    while ($row = mysqli_fetch_assoc($result)) {
-      var_dump($row);
-    }
-    ?>
   </div>
+  <script>
+  $(document).ready(function() {
+    $('.datepicker').datepicker();
+  });
+  </script>
   <?php require_once(TEMPLATES_PATH . "/footer.php"); ?>
