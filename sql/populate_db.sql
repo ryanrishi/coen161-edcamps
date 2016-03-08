@@ -11,7 +11,12 @@ INSERT INTO addresses(address_1, city, state,  zip) VALUES ('1234 First Street',
 
 INSERT INTO campsites(name, campsite_address_id, office_address_id, phone) VALUES ("Second Campsite", 1, 2, "2345678901");
 
-INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (1, "2016-06-01", "2016-06-08");
+INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (1, "2016-06-06", "2016-06-17");
+INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (2, "2016-06-20", "2016-07-01");
+INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (3, "2016-07-04", "2016-07-15");
+INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (4, "2016-07-18", "2016-07-29");
+INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (5, "2016-08-01", "2016-08-12");
+INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (6, "2016-08-15", "2016-08-26");
 
 INSERT INTO questions (question, answer) VALUES ("How many camp locations are there?", "There are 5 camp locations.");
 INSERT INTO questions (question, answer) VALUES ("How many sessions are there?", "Each campsite location has between 4 and 8 camp sessions.");
