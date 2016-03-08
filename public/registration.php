@@ -22,7 +22,7 @@ require_once(TEMPLATES_PATH . "/header.php");
       </p>
       <p>Allergies, notes, etc.&nbsp;<input type="text" name="camper_notes" value=""></p>
       <p>Camp location&nbsp;
-        <select name="campsite_location" onchange="showSessionsForSelectedLocation()">
+        <select class="campsite-location" name="campsite_location" onchange="showSessionsForSelectedLocation()">
           <?php
           require_once("helpers/db.php");
           $conn = get_db_conn();
@@ -41,62 +41,84 @@ require_once(TEMPLATES_PATH . "/header.php");
           // TODO when a user selects a location, populate sessions
           ?>
         </select>
+        <div class="active-sessions-for-selected-location">
+          <!-- this will be populated when user selects a campsite locaation -->
+        </div>
 
         <script>
-        function showSessionsForSelectedLocations() {
-          console.debug('showSessionsForSelectedLocations');
+        function showSessionsForSelectedLocation() {
+          console.debug('showSessionsForSelectedLocation');
+          var selectedLocationId = $('.camper-information .campsite-location').val();
+          if (selectedLocationId === null || selectedLocationId === undefined) {
+            console.error('showSessionsForSelectedLocation', 'locationId is not selected');
+            return;
+          }
+          $.ajax({
+            data: 'locationId=' + selectedLocationId,
+            url: 'helpers/get_campsite_sessions.php',
+            method: 'POST',
+            success: function(data) {
+              console.debug('get_campsite_sessions', JSON.parse(data));
+              var sessionsActive = JSON.parse(data);
+              var $sessions = $('.active-sessions-for-selected-location');
+              sessionsActive.forEach(function(d) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'radio');
+                input.setAttribute('name', 'session');
+                input.setAttribute('value', d.id);
+                $sessions.append(input);
+                $sessions.append('&nbsp;' + d.start + ' - ' + d.end); // TODO format dates
+              });
+            }
+          });
         }
         </script>
-      <p>Camp duration&nbsp;
-        <input type="radio" name="camper_duration" value="1">&nbsp;1
-        <input type="radio" name="camper_duration" value="2">&nbsp;2
-      </p>
-    </div>
+      </div>
 
-    <div class="parent-information">
-      <h3>Parent Information</h3>
-      <hr>
-      <p>Name&nbsp;<input type="text" name="parent_name" value=""></p>
-      <p>Email&nbsp;<input type="text" name="parent_email" value=""></p>
-      <p>Phone&nbsp;<input type="text" name="parent_phone" value=""></p>
-    </div>
+      <div class="parent-information">
+        <h3>Parent Information</h3>
+        <hr>
+        <p>Name&nbsp;<input type="text" name="parent_name" value=""></p>
+        <p>Email&nbsp;<input type="text" name="parent_email" value=""></p>
+        <p>Phone&nbsp;<input type="text" name="parent_phone" value=""></p>
+      </div>
 
-    <div class="payment-information">
-      <h3>Payment Information</h3>
-      <hr>
-      <p>Card Type&nbsp;
-        <select class="" name="card_type">
-          <?php
-          $supported_cards = array("MasterCard", "Visa", "Discover", "American Express");
-          foreach($supported_cards as $key => $card) {
-            echo "<option value=$card>$card</option>";
-          }
-          ?>
-        </select>
-      </p>
-      <p>Card Number&nbsp;<input type="text" name="card_number" value=""></p>
-      <p>Expiration Date&nbsp;<input type="text" name="card_exp" value=""></p>
-      <p>CVV&nbsp;<input type="text" name="card_cvv" value=""></p>
-    </div>
+      <div class="payment-information">
+        <h3>Payment Information</h3>
+        <hr>
+        <p>Card Type&nbsp;
+          <select class="" name="card_type">
+            <?php
+            $supported_cards = array("MasterCard", "Visa", "Discover", "American Express");
+            foreach($supported_cards as $key => $card) {
+              echo "<option value=$card>$card</option>";
+            }
+            ?>
+          </select>
+        </p>
+        <p>Card Number&nbsp;<input type="text" name="card_number" value=""></p>
+        <p>Expiration Date&nbsp;<input type="text" name="card_exp" value=""></p>
+        <p>CVV&nbsp;<input type="text" name="card_cvv" value=""></p>
+      </div>
 
-    <input type="button" name="submit" value="Submit" class="btn">
-  </form>
+      <input type="button" name="submit" value="Submit" class="btn">
+    </form>
 
-  <?php
-  require_once("helpers/db.php");
+    <?php
+    require_once("helpers/db.php");
 
-  $conn = get_db_conn();
+    $conn = get_db_conn();
 
-  $sql = "SELECT * FROM activities";
-  $result = $conn->query($sql);
+    $sql = "SELECT * FROM activities";
+    $result = $conn->query($sql);
 
-  if (!$result) {
-    echo "ERROR: " . mysqli_error($conn);
-  }
+    if (!$result) {
+      echo "ERROR: " . mysqli_error($conn);
+    }
 
-  while ($row = mysqli_fetch_assoc($result)) {
-    var_dump($row);
-  }
-  ?>
-</div>
-<?php require_once(TEMPLATES_PATH . "/footer.php"); ?>
+    while ($row = mysqli_fetch_assoc($result)) {
+      var_dump($row);
+    }
+    ?>
+  </div>
+  <?php require_once(TEMPLATES_PATH . "/footer.php"); ?>

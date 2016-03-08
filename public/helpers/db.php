@@ -1,5 +1,5 @@
 <?php
-  require_once("../resources/config.php");
+  // require_once("../resources/config.php");
 
   function get_db_conn() {
     global $config;
