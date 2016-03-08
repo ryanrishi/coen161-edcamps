@@ -45,9 +45,40 @@ TODO
 ===
 - ~~create database tables (Ryan)~~
 - create content (activities, fake forum posts)
-- registration
-  - make DOB datepicker / find a datepicker library
+- create homepage (Jessie)
+  - site logo
+  - age requirements
+  - special instructions for children and parent_last
+  - map of locations
+  - philosophy
+  - services
+  - locations
+  - pictures
+  - webmaster contact info
+- schedule/registration (Ryan)
+  - Applicant’s (child’s) full name
+  - Date of birth
+  - Parents name
+  - Parent’s contact email and phone (unique and serve to identify the child’s records)
+  - Grade level and school
+  - Any special instructions, allergies etc.
+  - Camp duration (1 week or 2 weeks)
+  - Fee (should be automatically calculated based on the duration signed up for.
+  - Payment information (payment by credit card)
+  - A confirmation should be displayed on successful registration. Once a child is registered for a camp, his or her parent can login (with the child’s name and email/phone) and view the details of his/her schedule.
+  - ~~make DOB datepicker / find a datepicker library~~
   - JS form validation
   - credit card drop-in UI
-  - sessions and locations -- select a location, then select a session from a new dropdown
+  - ~~sessions and locations -- select a location, then select a session from a new dropdown~~
   - format DOB on server-side (register.php)
+- store
+  - store item images in database
+  - create dummy inventory
+  - students signed up for camps get 15% discount
+  - add to cart --> checkout --> checkout
+- activities
+- schedule (on home page)
+- visualization page
+  - two graphs
+- activity page
+  - games/puzzles
