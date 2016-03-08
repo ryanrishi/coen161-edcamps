@@ -7,3 +7,6 @@ INSERT INTO camp_sessions(campsite_id, start);
 INSERT INTO campsites(name, campsite_address_id, office_address_id, phone) VALUES ("Second Campsite", 1, 2, "2345678901");
 
 INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (1, "2016-06-01", "2016-06-08");
+
+INSERT INTO questions (question, answer) VALUES ("How many camp locations are there?", "There are 8 camp locations.");
+INSERT INTO questions (question, answer) VALUES ("How many sessions are there?", "Each campsite location has between 4 and 8 camp sessions.");

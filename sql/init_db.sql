@@ -66,4 +66,10 @@ CREATE TABLE registrations(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   camper_id INT NOT NULL,
   session_id INT NOT NULL # relates to camp_sessions table
-)
+);
+
+CREATE TABLE questions(
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  question VARCHAR(160),
+  answer VARCHAR(160)
+);
