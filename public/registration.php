@@ -3,13 +3,38 @@ require_once("../resources/config.php");
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
 <div class="container container-fluid">
-  <form class="" action="register.php" method="post">
+  <script>
+  $(document).ready(function() {
+    var $form = $('.registration-form');
+    // validate email addresses
+    $('.email').each(function(i, el) {
+      $(el).change(function() {
+        var email = $(this).val();
+        console.debug(email);
+        // TODO
+      });
+    });
+
+    // validate phone number
+    $('.phone').each(function(i, el) {
+      $(el).change(function() {
+        var phoneNumber = $(this).val();
+        console.debug(phoneNumber);
+        // TODO
+      });
+    });
+
+    // validate dates
+    // TODO
+  });
+  </script>
+  <form class="registration-form" action="register.php" method="post">
     <div class="camper-information">
       <h3>Camper Information</h3>
       <hr>
       <p>First&nbsp;<input type="text" name="camper_first_name" value=""></p>
       <p>Last&nbsp;<input type="text" name="camper_last_name" value=""></p>
-      <p>Date of Birth&nbsp;<input type="text" name="camper_dob" value="mm/dd/yyyy"></p>
+      <p>Date of Birth&nbsp;<input type="text" class="date" name="camper_dob" value="mm/dd/yyyy"></p>
       <p>Grade level&nbsp;
         <select name="camper_grade">
           <?php
@@ -58,7 +83,7 @@ require_once(TEMPLATES_PATH . "/header.php");
             url: 'helpers/get_campsite_sessions.php',
             method: 'POST',
             success: function(data) {
-              console.debug('get_campsite_sessions', JSON.parse(data));
+              // console.debug('get_campsite_sessions', JSON.parse(data));
               var sessionsActive = JSON.parse(data);
               var $sessions = $('.active-sessions-for-selected-location');
               sessionsActive.forEach(function(d) {
@@ -78,9 +103,10 @@ require_once(TEMPLATES_PATH . "/header.php");
       <div class="parent-information">
         <h3>Parent Information</h3>
         <hr>
-        <p>Name&nbsp;<input type="text" name="parent_name" value=""></p>
-        <p>Email&nbsp;<input type="text" name="parent_email" value=""></p>
-        <p>Phone&nbsp;<input type="text" name="parent_phone" value=""></p>
+        <p>First&nbsp;<input type="text" name="parent_first_name" value=""></p>
+        <p>Last&nbsp;<input type="text" name="parent_last_name" value=""></p>
+        <p>Email&nbsp;<input type="text" class="email" name="parent_email" value=""></p>
+        <p>Phone&nbsp;<input type="text" class="phone-number" name="parent_phone" value=""></p>
       </div>
 
       <div class="payment-information">
