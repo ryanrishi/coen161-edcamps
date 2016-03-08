@@ -8,15 +8,37 @@ require_once(TEMPLATES_PATH . "/header.php");
 
   $conn = get_db_conn();
 
-  $sql = "SELECT * FROM activities";
+  $sql = "SELECT * FROM inventory";
   $result = $conn->query($sql);
 
   if (!$result) {
     echo "ERROR: " . mysqli_error($conn);
   }
 
+  $div_counter = 0;
   while ($row = mysqli_fetch_assoc($result)) {
-    var_dump($row);
+    global $div_counter;
+    if ($div_counter == 0) {
+      echo '<div class="row">';
+    }
+    $name = $row['name'];
+    $price = money_format("%n", $row['price']);
+    $remaining = $row['remaining'];
+    echo '<div class="store-item col-lg-4 col-md-4 col-sm-4">';
+    echo '<img src="http://placehold.it/200x200" />';
+    echo '<p class="item-name">' . $name . '</p>';
+    echo '<p class="item-price">$' . $price . '</p>';
+    if ($remaining > 0) {
+      echo '<button class="button btn">Add to Cart</button>';
+    }
+    else {
+      echo '<button class="button btn" disabled>Sold out!</button>';
+    }
+    echo '</div>';
+    if ($div_counter == 3) {
+      echo '</div>';
+    }
+    $div_counter = ($div_counter + 1) % 3;
   }
   ?>
 </div>
