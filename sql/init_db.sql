@@ -61,3 +61,9 @@ CREATE TABLE camp_sessions(
   start_date DATE NOT NULL,
   end_date DATE NOT NULL
 );
+
+CREATE TABLE registrations(
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  camper_id INT NOT NULL,
+  session_id INT NOT NULL # relates to camp_sessions table
+)
