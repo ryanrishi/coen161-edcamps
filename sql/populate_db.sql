@@ -24,3 +24,8 @@ INSERT INTO questions (question, answer) VALUES ("What is the deadline for signi
 INSERT INTO questions (question, answer) VALUES ("Are there vegetarian options for lunch?", "Yes your child may request a vegetarian option for lunch.");
 INSERT INTO questions (question, answer) VALUES ("What happens if the session I want is already full?", "You may join our waitlist for this session free of charge. Just call 800-222-3443.");
 INSERT INTO questions (question, answer) VALUES ("Will I receive a refund if I cancel my child's enrollment?", "You will receive a full refund up to 2 weeks before the camp. After this, you will only receive a refund of $120.");
+
+INSERT INTO inventory (name, price, remaining) VALUES ("Sweatshirt", 20.00, 50);
+INSERT INTO inventory (name, price, remaining) VALUES ("Water Bottle", 10.00, 30);
+INSERT INTO inventory (name, price, remaining) VALUES ("Sticker", 3.00, 0);
+INSERT INTO inventory (name, price, remaining) VALUES ("T-Shirt", 15.00, 20);
