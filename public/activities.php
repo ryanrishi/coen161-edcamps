@@ -16,7 +16,13 @@ require_once(TEMPLATES_PATH . "/header.php");
   }
 
   while ($row = mysqli_fetch_assoc($result)) {
-    var_dump($row);
+    $name = $row['name'];
+    $description = $row['description'];
+    echo '<div class="activity">';
+    echo "<h3>$name</h3>";
+    echo "<hr>";
+    echo "<p>$description</p>";
+    echo '</div>';
   }
   ?>
 </div>
