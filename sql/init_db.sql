@@ -13,7 +13,9 @@ CREATE TABLE activities(
 
 CREATE TABLE campsites(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  address_id INT NOT NULL,
+  name VARCHAR(20) NOT NULL,
+  office_address_id INT NOT NULL,
+  campsite_address_id INT NOT NULL,
   phone VARCHAR(10)
 );
 
@@ -45,6 +47,16 @@ CREATE TABLE campers(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   first_name VARCHAR(20) NOT NULL,
   last_name VARCHAR(20) NOT NULL,
+  dob DATE NOT NULL,
+  grade INT NOT NULL,
+  notes VARCHAR(40),
   parent1_id INT NOT NULL,
   parent2_id INT
+);
+
+CREATE TABLE camp_sessions(
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  campsite_id INT NOT NULL,
+  start_date DATE NOT NULL,
+  end_date DATE NOT NULL
 );
