@@ -21,3 +21,39 @@ footer.footer {
   opacity: 0.7;
   color: white;
 }
+
+#misison{
+  text-align: center;
+  font-family: tahoma;
+  font-size: 15px;
+}
+
+#overview {
+  font-size: 15px;
+  font-family: tahoma;
+  padding: 15px 700px 0px 100px;
+}
+
+#location{
+  font-size: 15px;
+  font-family: tahoma;
+  padding: 0px 0px 0px 100px;
+}
+
+#map {
+  width: 700px;
+  height: 440px;
+  background-color: #CCC;
+  margin: auto;
+}
+
+#edcamps {
+  padding: 15px 30px 30px 0px;
+  margin-left: 550px;
+}
+
+#kids{
+  position:absolute;
+  left: 900px;
+  top: 300px;
+}
