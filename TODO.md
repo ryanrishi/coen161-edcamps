@@ -46,15 +46,15 @@ TODO
 - ~~create database tables (Ryan)~~
 - create content (activities, fake forum posts)
 - create homepage (Jessie)
-  - site logo
+  - ~~site logo~~
   - age requirements
   - special instructions for children and parent_last
-  - map of locations
-  - philosophy
+  - ~~map of locations~~
+  - ~~philosophy~~
   - services
-  - locations
+  - ~~locations~~
   - pictures
-  - webmaster contact info
+  - ~~webmaster contact info~~
 - schedule/registration (Ryan)
   - Applicant’s (child’s) full name
   - Date of birth
@@ -75,7 +75,7 @@ TODO
   - store item images in database
   - create dummy inventory
   - students signed up for camps get 15% discount
-  - add to cart --> checkout --> checkout
+  - ~~add to cart --> checkout --> checkout~~
 - activities
 - schedule (on home page)
 - visualization page
