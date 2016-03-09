@@ -21,12 +21,14 @@ require_once(TEMPLATES_PATH . "/header.php");
       if ($quantity  > $remaining) {
         echo "ERROR quantity > remaining. Quantity of item $id requested is $quantity; only $remaining left";
         error_log ("ERROR quantity > remaining. Quantity of item $id requested is $quantity; only $remaining left");
-        // return or break?
+        continue;
       }
       $new_remaining = $remaining - $quantity;
       $sql = "UPDATE inventory SET remaining=$new_remaining WHERE id=$id";
       $result = $conn->query($sql);
     }
+    echo "Your order was successful.";
+    // order summary ?
   }
   ?>
 </div>

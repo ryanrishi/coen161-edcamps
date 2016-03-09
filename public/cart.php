@@ -11,7 +11,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     }
     $subtotal = 0;
     echo '<table class="table">';
-    echo '<tr><th>Quantity</th><th>Name</th><th>Price</th></tr>';
+    echo '<tr><th>Quantity</th><th>Item</th><th>Price</th></tr>';
     foreach ($_SESSION['cart'] as $id => $quantity) {
       $item_details = get_item_details($id);
       $name = $item_details['name'];
@@ -19,7 +19,12 @@ require_once(TEMPLATES_PATH . "/header.php");
       $subtotal += $item_details['price'] * $quantity;
       echo "<tr><td><a href=\"cart.php?drop=$id\">-</a>$quantity<a href=\"cart.php?add=$id\">+</a></td><td>$name</td><td>$price</td></td>";
     }
-    echo "Subtotal: $" . $subtotal; // TODO format?
+    echo "<p>Subtotal: $" . $subtotal . "</p>"; // TODO format?
+    if (isset($_SESSION['store_discount'])) {
+      echo "<p>Discount: " . $_SESSION['store_discount'] * 100 . "%</p>";
+      $subtotal *= (1 - $_SESSION['store_discount']);
+    }
+    echo "<p>Total: $" . $subtotal . "</p>";
   }
 
   function addToCart() {
@@ -95,11 +100,10 @@ require_once(TEMPLATES_PATH . "/header.php");
   //   unset($_GET['checkout']);
   // }
 
+  // apply discounts
+  $_SESSION['store_discount'] = 0.15;
 
   if (isset($_SESSION['cart'])) {
-    // foreach ($_SESSION['cart'] as $id => $name) {
-    //   echo "Item id " . $id . " is " . $name;
-    // }
     show_cart();
   }
   else {

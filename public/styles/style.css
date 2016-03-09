@@ -11,6 +11,11 @@ body {
 
 }
 
+.store-item {
+  padding-top: 15px;
+  text-align: center;
+}
+
 form .error {
   border: 1px solid #dd0000;
 }

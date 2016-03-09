@@ -4,6 +4,8 @@ require_once("../resources/config.php");
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
 <div class="container container-fluid">
+  <h1>Store</h1>
+  <hr>
   <?php
 
   require_once("helpers/db.php");
@@ -27,10 +29,10 @@ require_once(TEMPLATES_PATH . "/header.php");
     $name = $row['name'];
     $price = money_format("%n", $row['price']);
     $remaining = $row['remaining'];
-    echo '<div class="store-item col-lg-4 col-md-4 col-sm-4">';
+    echo '<div class="store-item col-lg-3 col-md-3 col-sm-3">';
     echo '<img src="http://placehold.it/200x200" />';
     echo '<p class="item-name">' . $name . '</p>';
-    echo '<p class="item-price">$' . $price . '</p>';
+    echo '<p class="item-price">' . $price . '</p>';
     if ($remaining > 0) {
       echo '<a href="cart.php?add=' . $id . '"><button class="button btn">Add to Cart</button></a>';
     }
@@ -41,7 +43,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     if ($div_counter == 3) {
       echo '</div>';
     }
-    $div_counter = ($div_counter + 1) % 3;
+    $div_counter = ($div_counter + 1) % 4;
   }
   ?>
 </div>
