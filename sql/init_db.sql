@@ -60,7 +60,8 @@ CREATE TABLE camp_sessions(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   campsite_id INT NOT NULL,
   start_date DATE NOT NULL,
-  end_date DATE NOT NULL
+  end_date DATE NOT NULL,
+  base_price DECIMAL(13,4) NOT NULL
 );
 
 CREATE TABLE registrations(

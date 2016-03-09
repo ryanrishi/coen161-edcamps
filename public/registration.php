@@ -81,9 +81,9 @@ require_once(TEMPLATES_PATH . "/header.php");
           ?>
         </select>
       </div>
-        <div class="active-sessions-for-selected-location">
+        <table class="table active-sessions-for-selected-location">
           <!-- this will be populated when user selects a campsite locaation -->
-        </div>
+        </table>
 
         <script>
         function showSessionsForSelectedLocation() {
@@ -98,16 +98,40 @@ require_once(TEMPLATES_PATH . "/header.php");
             url: 'helpers/get_campsite_sessions.php',
             method: 'POST',
             success: function(data) {
-              // console.debug('get_campsite_sessions', JSON.parse(data));
-              var sessionsActive = JSON.parse(data);
+              console.debug('showSessionsForSelectedLocation', 'success', data);
+              if (data.length === 0) {
+                // TODO tell user that no sessions are available for that location
+                console.debug('showSessionsForSelectedLocation', 'success', 'no sessions active', selectedLocationId);
+                return;
+              }
               var $sessions = $('.active-sessions-for-selected-location');
-              sessionsActive.forEach(function(d) {
-                var input = document.createElement('input');
-                input.setAttribute('type', 'radio');
-                input.setAttribute('name', 'session');
-                input.setAttribute('value', d.id);
-                $sessions.append(input);
-                $sessions.append('&nbsp;Session ' + d.id + ' (' + d.start + ' - ' + d.end + ')'); // TODO format dates
+              // empty the sessions table
+              $sessions.empty();
+              var tableHeader = '<tr><th></th><th>Camp Session</th><th>Start Date</th><th>End Date</th><th>Cost</th></tr>';
+              $sessions.append(tableHeader);
+              data.forEach(function(d) {
+                var tableRow = $(document.createElement('tr'));
+                // radio button
+                var radio = document.createElement('input');
+                radio.setAttribute('type', 'radio');
+                radio.setAttribute('name', 'session');
+                radio.setAttribute('value', d.id);
+                var td = $(document.createElement('td'));
+                td.append(radio);
+                tableRow.append(td);
+                for (key in d) {
+                  if (d.hasOwnProperty(key)) {
+                    var td = $(document.createElement('td'));
+                    if (key === 'base_price') {
+                      td.append('$' + parseFloat(d[key]).toFixed(2));
+                    }
+                    else {
+                      td.append(d[key]);
+                    }
+                    tableRow.append(td);
+                  }
+                }
+                $sessions.append(tableRow);
               });
             }
           });

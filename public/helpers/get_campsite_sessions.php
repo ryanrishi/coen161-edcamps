@@ -1,5 +1,6 @@
 <?php
 require_once("../../resources/config.php");
+header("Content-type: application/json");
 $location_id = $_POST['locationId'];
 // error_log($location_id);
 require_once("db.php");
