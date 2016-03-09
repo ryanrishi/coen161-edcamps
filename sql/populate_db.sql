@@ -11,12 +11,13 @@ INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1234 First Street'
 
 INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Second Campsite", 1, 2, "2345678901");
 
-INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (1, "2016-06-06", "2016-06-17");
-INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (2, "2016-06-20", "2016-07-01");
-INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (3, "2016-07-04", "2016-07-15");
-INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (4, "2016-07-18", "2016-07-29");
-INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (5, "2016-08-01", "2016-08-12");
-INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (6, "2016-08-15", "2016-08-26");
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-06-06", "2016-06-17", 800.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-06-20", "2016-07-01", 650.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (3, "2016-07-04", "2016-07-15", 450.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (4, "2016-07-18", "2016-07-29", 720.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-08-01", "2016-08-12", 650.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (6, "2016-08-15", "2016-08-26", 580.00);
+
 # These were generated using fakenamegenerator.com
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Richard", "McDonald", "RichardSMcDonald@inbound.plus", 5087431076);
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Delbert", "Ratliff", "DelbertCRatliff@inbound.plu", 9078481843);
