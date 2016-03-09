@@ -1,22 +1,25 @@
-INSERT INTO activities(name, description) VALUES ("Pottery", "Making pottery");
-INSERT INTO activities(name, description) VALUES ("3D Printing", "Print a 3D object of choice");
-INSERT INTO activities(name, description) VALUES ("Swimming", "Swim at nearby lakes and waterparks");
-INSERT INTO activities(name, description) VALUES ("Hiking", "Hike nearby peaks");
-INSERT INTO activities(name, description) VALUES ("Soccer", "Play soccer");
-INSERT INTO activities(name, description) VALUES ("Programming", "Learn basic coding languages");
+INSERT INTO activities (name, description) VALUES ("Pottery", "Making pottery");
+INSERT INTO activities (name, description) VALUES ("3D Printing", "Print a 3D object of choice");
+INSERT INTO activities (name, description) VALUES ("Swimming", "Swim at nearby lakes and waterparks");
+INSERT INTO activities (name, description) VALUES ("Hiking", "Hike nearby peaks");
+INSERT INTO activities (name, description) VALUES ("Soccer", "Play soccer");
+INSERT INTO activities (name, description) VALUES ("Programming", "Learn basic coding languages");
 
-INSERT INTO campsites(name, campsite_address_id, office_address_id, phone) VALUES ("MyCampsite", 1, 2, "1234567890");
-INSERT INTO addresses(address_1, city, state, zip) VALUES ('500 El Camino Real', 'Santa Clara', 'California', 95053);
-INSERT INTO addresses(address_1, city, state,  zip) VALUES ('1234 First Street', 'Santa Clara', 'California', 95050);
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("MyCampsite", 1, 2, "1234567890");
+INSERT INTO addresses (address_1, city, state, zip) VALUES ('500 El Camino Real', 'Santa Clara', 'California', 95053);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1234 First Street', 'Santa Clara', 'California', 95050);
 
-INSERT INTO campsites(name, campsite_address_id, office_address_id, phone) VALUES ("Second Campsite", 1, 2, "2345678901");
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Second Campsite", 1, 2, "2345678901");
 
-INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (1, "2016-06-06", "2016-06-17");
-INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (2, "2016-06-20", "2016-07-01");
-INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (3, "2016-07-04", "2016-07-15");
-INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (4, "2016-07-18", "2016-07-29");
-INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (5, "2016-08-01", "2016-08-12");
-INSERT INTO camp_sessions(campsite_id, start_date, end_date) VALUES (6, "2016-08-15", "2016-08-26");
+INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (1, "2016-06-06", "2016-06-17");
+INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (2, "2016-06-20", "2016-07-01");
+INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (3, "2016-07-04", "2016-07-15");
+INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (4, "2016-07-18", "2016-07-29");
+INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (5, "2016-08-01", "2016-08-12");
+INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (6, "2016-08-15", "2016-08-26");
+
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("John", "Doe", "jdoe@scu.edu", 1234567890);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Jane", "Doe", "j2doe@scu.edu", 2345678901);
 
 INSERT INTO questions (question, answer) VALUES ("How many camp locations are there?", "There are 5 camp locations.");
 INSERT INTO questions (question, answer) VALUES ("How many sessions are there?", "Each campsite location has between 4 and 8 camp sessions.");

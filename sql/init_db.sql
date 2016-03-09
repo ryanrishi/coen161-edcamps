@@ -33,6 +33,7 @@ CREATE TABLE inventory(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(20) NOT NULL,
   price DECIMAL(13,4) NOT NULL,
+  image_url TEXT,
   remaining INT
 );
 
