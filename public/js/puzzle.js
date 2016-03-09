@@ -36,7 +36,7 @@ function loadImages() {
   var images = {};
   for (var i = 0; i < 15; i++) {
     var img = document.createElement('img');
-    img.setAttribute('src', 'tile_' + (i < 10 ? '0' + i : i) + '.png');
+    img.setAttribute('src', 'img/tile_' + (i < 10 ? '0' + i : i) + '.png');
     images[i] = img;
   }
   return images
