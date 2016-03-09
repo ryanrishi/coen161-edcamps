@@ -46,7 +46,6 @@
         </form> -->
         <ul class="nav navbar-nav navbar-right">
           <?php
-          error_log('$_SESSION[user_id] ' . $_SESSION['user_id']);
           // check if user is logged in
           if (isset($_SESSION['user_id'])) {
             require_once('../resources/config.php');

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../resources/config.php");
 require_once("helpers/db.php");
 header("Content-type: application/json");
