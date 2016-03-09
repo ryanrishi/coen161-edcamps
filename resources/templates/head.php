@@ -9,4 +9,5 @@ echo '<!-- scripts -->';
 echo '<script src="/resources/lib/js/jquery-1.12.1.min.js" type="text/javascript"></script>';
 echo '<script src="/resources/lib/js/bootstrap.min.js" type="text/javascript"></script>';
 echo '<script src="/resources/lib/js/jquery-ui.min.js" type="text/javascript"></script>';
+echo '<script src="/public/js/login.js" type="text/javascript"></script>';
 ?>

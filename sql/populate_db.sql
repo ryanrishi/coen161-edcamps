@@ -17,9 +17,14 @@ INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (3, "2016-0
 INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (4, "2016-07-18", "2016-07-29");
 INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (5, "2016-08-01", "2016-08-12");
 INSERT INTO camp_sessions (campsite_id, start_date, end_date) VALUES (6, "2016-08-15", "2016-08-26");
+# These were generated using fakenamegenerator.com
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Richard", "McDonald", "RichardSMcDonald@inbound.plus", 5087431076);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Delbert", "Ratliff", "DelbertCRatliff@inbound.plu", 9078481843);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Damien", "Greene", "DamienJGreene@inbound.plus", 9738993281);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Bryant", "Acosta", "BryantMAcosta@inbound.plus", 4692616278);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Katherine", "Rodrigue", "KatherineCRodrigue@inbound.plus", 5182139482);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Chad", "Carson", "ChadJCarson@inbound.plus", 7635252355);
 
-INSERT INTO users (first_name, last_name, email, phone) VALUES ("John", "Doe", "jdoe@scu.edu", 1234567890);
-INSERT INTO users (first_name, last_name, email, phone) VALUES ("Jane", "Doe", "j2doe@scu.edu", 2345678901);
 
 INSERT INTO questions (question, answer) VALUES ("How many camp locations are there?", "There are 5 camp locations.");
 INSERT INTO questions (question, answer) VALUES ("How many sessions are there?", "Each campsite location has between 4 and 8 camp sessions.");
