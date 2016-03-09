@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +45,28 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form> -->
         <ul class="nav navbar-nav navbar-right">
-          <li><a id="login" href="#" class="account-name">Account</a></li>
+          <?php
+          error_log('$_SESSION[user_id] ' . $_SESSION['user_id']);
+          // check if user is logged in
+          if (isset($_SESSION['user_id'])) {
+            require_once('../resources/config.php');
+            require_once('helpers/db.php');
+            $conn = get_db_conn();
+
+            // get user name
+            $user_id = $_SESSION['user_id'];
+            $sql = "SELECT * FROM users WHERE id=$user_id";
+            $result = $conn->query($sql);
+            $row = mysqli_fetch_assoc($result);
+            $first_name = $row['first_name'];
+            $last_name = $row['last_name'];
+            echo '<li><a id="login" class="account-name" href="#">' . $first_name . ' ' . $last_name . '</a></li>';
+          }
+          else {
+            // not logged in
+            echo '<li><a id="login" class="account-name" href="#">Login</a></li>';
+          }
+          ?>
           <li><a href="store.php">Store</a></li>
           <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
