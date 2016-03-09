@@ -1,9 +1,11 @@
 <?php
+session_start();
 require_once("../resources/config.php");
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
 <div class="container container-fluid">
   <?php
+
   require_once("helpers/db.php");
 
   $conn = get_db_conn();
@@ -21,6 +23,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     if ($div_counter == 0) {
       echo '<div class="row">';
     }
+    $id = $row['id'];
     $name = $row['name'];
     $price = money_format("%n", $row['price']);
     $remaining = $row['remaining'];
@@ -29,7 +32,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     echo '<p class="item-name">' . $name . '</p>';
     echo '<p class="item-price">$' . $price . '</p>';
     if ($remaining > 0) {
-      echo '<button class="button btn">Add to Cart</button>';
+      echo '<a href="cart.php?add=' . $id . '"><button class="button btn">Add to Cart</button></a>';
     }
     else {
       echo '<button class="button btn" disabled>Sold out!</button>';
