@@ -7,31 +7,32 @@ USE edcamps;
 
 CREATE TABLE activities(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(20) NOT NULL,
-  description VARCHAR(160) NOT NULL
+  name TINYTEXT NOT NULL,
+  description TEXT NOT NULL,
+  image_url TEXT
 );
 
 CREATE TABLE campsites(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(20) NOT NULL,
+  name TINYTEXT NOT NULL,
   office_address_id INT NOT NULL,
   campsite_address_id INT NOT NULL,
-  phone VARCHAR(10)
+  phone TINYTEXT
 );
 
 CREATE TABLE addresses(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  address_1 VARCHAR(80) NOT NULL,
-  address_2 VARCHAR(80),
-  address_3 VARCHAR(30),
-  city VARCHAR(20) NOT NULL,
-  state VARCHAR(20) NOT NULL,
+  address_1 TINYTEXT NOT NULL,
+  address_2 TINYTEXT,
+  address_3 TINYTEXT,
+  city TINYTEXT NOT NULL,
+  state TINYTEXT NOT NULL,
   zip INT
 );
 
 CREATE TABLE inventory(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(20) NOT NULL,
+  name TINYTEXT NOT NULL,
   price DECIMAL(13,4) NOT NULL,
   image_url TEXT,
   remaining INT
@@ -39,19 +40,19 @@ CREATE TABLE inventory(
 
 CREATE TABLE users(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  first_name VARCHAR(20) NOT NULL,
-  last_name VARCHAR(20) NOT NULL,
-  email VARCHAR(30) NOT NULL,
-  phone VARCHAR(10) NOT NULL
+  first_name TINYTEXT NOT NULL,
+  last_name TINYTEXT NOT NULL,
+  email TINYTEXT NOT NULL,
+  phone TINYTEXT NOT NULL
 );
 
 CREATE TABLE campers(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  first_name VARCHAR(20) NOT NULL,
-  last_name VARCHAR(20) NOT NULL,
+  first_name TINYTEXT NOT NULL,
+  last_name TINYTEXT NOT NULL,
   dob DATE NOT NULL,
   grade INT NOT NULL,
-  notes VARCHAR(40),
+  notes TEXT,
   parent1_id INT NOT NULL,
   parent2_id INT
 );
@@ -72,6 +73,6 @@ CREATE TABLE registrations(
 
 CREATE TABLE questions(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  question VARCHAR(160),
-  answer VARCHAR(160)
+  question TEXT,
+  answer TEXT
 );
