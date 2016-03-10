@@ -49,6 +49,10 @@ INSERT INTO questions (question, answer) VALUES ("What is the deadline for signi
 INSERT INTO questions (question, answer) VALUES ("Are there vegetarian options for lunch?", "Yes your child may request a vegetarian option for lunch.");
 INSERT INTO questions (question, answer) VALUES ("What happens if the session I want is already full?", "You may join our waitlist for this session free of charge. Just call 800-222-3443.");
 INSERT INTO questions (question, answer) VALUES ("Will I receive a refund if I cancel my child's enrollment?", "You will receive a full refund up to 2 weeks before the camp. After this, you will only receive a refund of $120.");
+INSERT INTO questions (question, answer) VALUES ("If my child is injured when will I be notified?", "The medical team will notify parents as soon as possible depending on the severity of the illness/injury.");
+INSERT INTO questions (question, answer) VALUES ("Do you have a doctor or nurse onsite?", "Yes we have a medical team on site at all times.");
+INSERT INTO questions (question, answer) VALUES ("Do you accomodate children with special needs?", "If your child has special medical need, please contact EdCamps prior to registration.");
+INSERT INTO questions (question, answer) VALUES ("Should children bring spending money?", "Snacks are available ");
 
 INSERT INTO inventory (name, price, remaining) VALUES ("Sweatshirt", 20.00, 50);
 INSERT INTO inventory (name, price, remaining) VALUES ("Water Bottle", 10.00, 30);
