@@ -55,6 +55,12 @@ TODO
   - ~~locations~~
   - pictures
   - ~~webmaster contact info~~
+- populate database (Jessie)
+  - put image url for activities (image should be square)
+  - create more sessions (each campsite will have multiple sessions. sessions table should have ~40 rows (5 locations * 8 sessions))
+  - create more inventory
+  - find image urls for inventory and put in database
+  - create more campsites (~5 or so)
 - schedule/registration (Ryan)
   - Applicant’s (child’s) full name
   - Date of birth
@@ -65,18 +71,21 @@ TODO
   - Camp duration (1 week or 2 weeks)
   - Fee (should be automatically calculated based on the duration signed up for.
   - Payment information (payment by credit card)
+  - validate a DOB isn't in the future
+  - validate a CC expiration date isn't in the past
   - A confirmation should be displayed on successful registration. Once a child is registered for a camp, his or her parent can login (with the child’s name and email/phone) and view the details of his/her schedule.
   - ~~make DOB datepicker / find a datepicker library~~
   - JS form validation
   - credit card drop-in UI
   - ~~sessions and locations -- select a location, then select a session from a new dropdown~~
   - format DOB on server-side (register.php)
-- store
+- store (Ryan)
   - store item images in database
-  - create dummy inventory
+  - ~create dummy inventory~
   - students signed up for camps get 15% discount
   - ~~add to cart --> checkout --> checkout~~
 - activities
+  - store activity image url in database
 - schedule (on home page)
 - visualization page
   - two graphs
