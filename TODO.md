@@ -57,10 +57,10 @@ TODO
   - ~~webmaster contact info~~
 - populate database (Jessie)
   - put image url for activities (image should be square)
-  - create more sessions (each campsite will have multiple sessions. sessions table should have ~40 rows (5 locations * 8 sessions))
-  - create more inventory
-  - find image urls for inventory and put in database
-  - create more campsites (~5 or so)
+  - ~~create more sessions (each campsite will have multiple sessions. sessions table should have ~40 rows (5 locations * 8 sessions))~~
+  - ~~create more inventory~~
+  - ~~find image urls for inventory and put in database~~
+  - ~~create more campsites (~5 or so)~~
 - schedule/registration (Ryan)
   - Applicant’s (child’s) full name
   - Date of birth
