@@ -7,17 +7,21 @@ require_once(TEMPLATES_PATH . "/header.php");
 	<section id="misison">
 		<p>Edcamps provides an educational journey for children aged 10-14 through fun, critical thinking, and creativity.</p>
 	</section>
-	<img id="kids" alt="kids" src="kids.jpg"/>
 	<section id="overview">
-		<h2>Overview</h2>
-		<p>Edcamps Inc was created to foster a child’s love of learning. During their time at camp, students will participate
-			in a variety of outdoor activities such as kayaking, swimming, tennis, soccer, and more! Through these activities
-			the children develop relationships with one another, decision-making skills, and engage in physical activity.</p>
-			<p>Not only will your children participate in outdoor activities, but in computer-based activities as well. We teach
-				over 20 STEM courses in programming, video game design, robotics, and web design.</p>
+		<div class="row">
+			<img id="kids" alt="kids" src="kids.jpg"/>
+		</div>
+		<div class="row">
+			<h2>Overview</h2>
+			<p>Edcamps Inc was created to foster a child’s love of learning. During their time at camp, students will participate
+				in a variety of outdoor activities such as kayaking, swimming, tennis, soccer, and more! Through these activities
+				the children develop relationships with one another, decision-making skills, and engage in physical activity.</p>
+				<p>Not only will your children participate in outdoor activities, but in computer-based activities as well. We teach
+					over 20 STEM courses in programming, video game design, robotics, and web design.</p>
+				</div>
 			</section>
 			<section id="location">
-				<h3>Locations</h3>
+				<h2>Locations</h2>
 				<ul>
 					<li>Portland, OR</li>
 					<p></p>
@@ -33,7 +37,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 			</section>
 			<div id="map"></div>
 			<script type="text/javascript" language="javascript">
-			function initMap(){
+			function initMap() {
 				var mapDiv = document.getElementById('map');
 				var map = new google.maps.Map(mapDiv, {
 					center: {lat: 41.83682804465982, lng: -95.36132850000001},
