@@ -141,10 +141,10 @@ INSERT INTO questions (question, answer) VALUES ("What if my child has allergies
 INSERT INTO questions (question, answer) VALUES ("What should my child wear to camp?", "We recommend that students wear comfortable clothes like shorts, t-shirts and sneakers");
 INSERT INTO questions (question, answer) VALUES ("Where do I pick up and drop off my child?", "Pick up & drop off will occur at the camp's main enterance. We will not release any children without parent supervision.");
 
-INSERT INTO inventory (name, price, remaining) VALUES ("Sweatshirt", 25.00, 50);
-INSERT INTO inventory (name, price, remaining) VALUES ("Water Bottle", 10.00, 30);
+INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Sweatshirt", 25.00, 50, "sweatshirt.jpg");
+INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Water Bottle", 10.00, 30, "waterbottle.jpg");
 INSERT INTO inventory (name, price, remaining) VALUES ("Sticker", 3.00, 0);
-INSERT INTO inventory (name, price, remaining) VALUES ("T-Shirt", 15.00, 20);
-INSERT INTO inventory (name, price, remaining) VALUES ("Baseball cap", 10.00, 20);
-INSERT INTO inventory (name, price, remaining) VALUES ("Backpack", 30.00, 30);
-INSERT INTO inventory (name, price, remaining) VALUES ("Notebook", 3.00, 10);
+INSERT INTO inventory (name, price, remaining, image_url) VALUES ("T-Shirt", 15.00, 20, "tshirt.jpg");
+INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Baseball cap", 10.00, 20, "hat.jpg");
+INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Backpack", 30.00, 30, "backpack.jpg");
+INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Notebook", 3.00, 10, "notebook.jpg");
