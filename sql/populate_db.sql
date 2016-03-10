@@ -30,8 +30,11 @@ INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1500 Mcalistar Cou
 INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Second Campsite", 1, 2, "2345678901");
 INSERT INTO addresses (address_2, city, state,  zip) VALUES ('4683 Virginia Ave', 'New York', 'New York', 10001);
 INSERT INTO addresses (address_2, city, state,  zip) VALUES ('1092 Sunset Road', 'Brooklyn', 'New York', 11223);
-INSERT INTO addresses (address_2, city, state,  zip) VALUES ('1500 Mcalistar Court', 'Sunnyvale', 'California', 94085);
-INSERT INTO addresses (address_2, city, state,  zip) VALUES ('1500 Mcalistar Court', 'Sunnyvale', 'California', 94085);
+INSERT INTO addresses (address_2, city, state,  zip) VALUES ('201 Stagecoach Road', 'New Brunswick', 'New Jersey', 08899);
+INSERT INTO addresses (address_2, city, state,  zip) VALUES ('120 Hendricks Court', 'Newark', 'New Jersey', 07100);
+INSERT INTO addresses (address_2, city, state,  zip) VALUES ('605 Meadowside Street', 'Norwalk', 'Connecticut', 06850);
+INSERT INTO addresses (address_2, city, state,  zip) VALUES ('409 Ford Drive', 'Darian', 'Connecticut', 06820);
+INSERT INTO addresses (address_2, city, state,  zip) VALUES ('2356 Houston Street', 'Manhattan', 'New York', 10026);
 
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-06-06", "2016-06-17", 800.00);
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-06-20", "2016-07-01", 650.00);
