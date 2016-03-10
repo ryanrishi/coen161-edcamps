@@ -7,7 +7,7 @@
 <p id="output"></p>
 
 <head>
-<script src="resources\lib\js\three.min.js"></script>
+<script src="/resources/lib/js/three.min.js"></script>
 </head>
 
 <body>
@@ -141,14 +141,14 @@ if (sphere.position.x > canvas.width || sphere.position.x < 0)
 {
      dx = - Math.sign(dx) * (1 + Math.random() % 10);
      color = "#"+irand()+irand()+irand();
-    
+
 }
 sphere.position.z += dz;
 if (sphere.position.z > canvas.width || sphere.position.z < 0)
 {
      dz = - Math.sign(dz) * (1 + Math.random() % 10);
      color = "#"+irand()+irand()+irand();
-   
+
 }
 
 sphere.position.y += dy;
@@ -164,12 +164,12 @@ else if (sphere.position.y <= 2)
          	&& sphere.position.z >= pad.position.z - 50 && sphere.position.z <= pad.position.z + 50)
          {
             dy = -  Math.sign(dy) * (1 + Math.random() % 10);
-           
+
             color = "#"+irand()+irand()+irand();
          	} else {
              clearInterval(alarm);
          }
-             
+
      }
 renderer.render(scene, camera)
 }
