@@ -1,5 +1,5 @@
-INSERT INTO activities (name, description) VALUES ("Pottery", "Making pottery");
-INSERT INTO activities (name, description) VALUES ("3D Printing", "Print a 3D object of choice");
+INSERT INTO activities (name, description) VALUES ("Pottery", "Make your own customized bowls and plates out of clay.");
+INSERT INTO activities (name, description) VALUES ("3D Printing", "Print a 3D object of choice.");
 INSERT INTO activities (name, description) VALUES ("Swimming", "Swim at nearby lakes and waterparks");
 INSERT INTO activities (name, description) VALUES ("Hiking", "Hike nearby peaks");
 INSERT INTO activities (name, description) VALUES ("Soccer", "Play soccer");
@@ -8,14 +8,14 @@ INSERT INTO activities (name, description) VALUES ("Robotics", "Learn how to bui
 INSERT INTO activities (name, description) VALUES ("Tennis", "Tennis lessons available for all levels");
 INSERT INTO activities (name, description) VALUES ("Kayaking", "Kayak and race against your friends");
 INSERT INTO activities (name, description) VALUES ("Basketball", "Join a team for our basketball tournament");
-INSERT INTO activities (name, description) VALUES ("Pre-programming", "Learn math programming foundations");
+INSERT INTO activities (name, description) VALUES ("Pre-programming", "Learn math programming foundations before diving into more complex coding.");
 INSERT INTO activities (name, description) VALUES ("Rock climbing", "Join us as attend a rock climbing gym");
 INSERT INTO activities (name, description) VALUES ("Baseball", "Baseball and softball tournaments");
 INSERT INTO activities (name, description) VALUES ("Biking", "Mountain biking");
-INSERT INTO activities (name, description) VALUES ("Zoo", "Spend the day enjoying the zoo");
-INSERT INTO activities (name, description) VALUES ("Horseback riding", "Horseback riding on forest trails");
-INSERT INTO activities (name, description) VALUES ("Frisbee golf", "Frisbee golf at the park");
-INSERT INTO activities (name, description) VALUES ("Drawing", "Drawing and painting lessons");
+INSERT INTO activities (name, description) VALUES ("Zoo", "Spend the day enjoying the nearby zoos.");
+INSERT INTO activities (name, description) VALUES ("Horseback riding", "Join us as we ride horses through forest trails.");
+INSERT INTO activities (name, description) VALUES ("Disc golf", "See if you can traverse the disc golf course from beginning to end in the fewest number of disk throws.");
+INSERT INTO activities (name, description) VALUES ("Drawing", "Drawing and painting lessons available for students of all levels.");
 
 INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("SantaClara", 1, 1, "1234567890");
 INSERT INTO addresses (address_1, city, state, zip) VALUES ('500 El Camino Real', 'Santa Clara', 'California', 95053);
