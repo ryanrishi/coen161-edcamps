@@ -165,23 +165,42 @@ require_once(TEMPLATES_PATH . "/header.php");
       </div>
 
       <div class="parent-information">
+        <?php
+        // get parent information
+        require_once('helpers/db.php');
+
+        global $parent_first, $parent_last, $parent_email, $parent_phone;
+
+        if (isset($_SESSION['user_id'])) {
+          $conn = get_db_conn();
+          $user_id = $_SESSION['user_id'];
+          $sql = "SELECT * FROM users WHERE id=$user_id";
+          $result = $conn->query($sql);
+          $row = mysqli_fetch_assoc($result);
+          $parent_first = $row['first_name'];
+          $parent_last = $row['last_name'];
+          $parent_email = $row['email'];
+          $parent_phone = $row['phone'];
+        }
+
+        ?>
         <h3>Parent Information</h3>
         <hr>
         <div class="form-group">
           <label>First</label>
-          <input type="text" name="parent_first_name" value="" placeholder="First">
+          <input type="text" name="parent_first_name" value="<?php global $parent_first; echo $parent_first; ?>" placeholder="First">
         </div>
         <div class="form-group">
           <label>Last</label>
-          <input type="text" name="parent_last_name" value="" placeholder="Last">
+          <input type="text" name="parent_last_name" value="<?php global $parent_last; echo $parent_last; ?>" placeholder="Last">
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="text" class="email" name="parent_email" value="" onchange="emailDidChange()" placeholder="email">
+          <input type="text" class="email" name="parent_email" value="<?php global $parent_email; echo $parent_email; ?>" onchange="emailDidChange()" placeholder="email">
         </div>
         <div class="form-group">
           <label>Phone</label>
-          <input type="text" class="phone-number" name="parent_phone" value="" onchange="phoneDidChange()" placeholder="(XXX) XXX-XXXX">
+          <input type="text" class="phone-number" name="parent_phone" value="<?php global $parent_phone; echo $parent_phone; ?>" onchange="phoneDidChange()">
         </div>
       </div>
 
@@ -214,7 +233,7 @@ require_once(TEMPLATES_PATH . "/header.php");
         </div>
       </div>
 
-      <input type="button" name="submit" value="Submit" class="btn">
+      <input type="submit" name="submit" value="Submit" class="btn">
     </form>
   </div>
   <script src="../resources/lib/js/jquery.mask.min.js" type="text/javascript"></script>
