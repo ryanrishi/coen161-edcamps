@@ -50,6 +50,12 @@ INSERT INTO users (first_name, last_name, email, phone) VALUES ("Damien", "Green
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Bryant", "Acosta", "BryantMAcosta@inbound.plus", 4692616278);
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Katherine", "Rodrigue", "KatherineCRodrigue@inbound.plus", 5182139482);
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Chad", "Carson", "ChadJCarson@inbound.plus", 7635252355);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Miranda", "Simpson", "mirandasimpson@gmail.com", 8340334567);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Mark", "Bills", "markckbills@hotmail.com", 6540982345);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Nicole", "Rogers", "nicrogers@gmail.com", 9430983332);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Sarah", "Smith", "sarahJsmith@cisco.com", 5468764345);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Ryan", "Griffith", "rgriffith@aol.com", 4560983322);
+INSERT INTO users (first_name, last_name, email, phone) VALUES ("Jessica", "Upridge", "jessupridge@hotmail.com", 9543333092);
 
 
 INSERT INTO questions (question, answer) VALUES ("How many camp locations are there?", "There are 5 camp locations.");
