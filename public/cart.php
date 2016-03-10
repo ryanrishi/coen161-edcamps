@@ -100,7 +100,14 @@ require_once(TEMPLATES_PATH . "/header.php");
   // }
 
   // apply discounts
-  $_SESSION['store_discount'] = 0.15;
+  if (isset($_SESSION['user_id'])) {
+    // user is logged in --> apply discount
+    $_SESSION['store_discount'] = 0.15;
+  }
+  else {
+    // unset it in case it is still set (ie. user logged out)
+    unset($_SESSION['store_discount']);
+  }
 
   if (isset($_SESSION['cart'])) {
     show_cart();
