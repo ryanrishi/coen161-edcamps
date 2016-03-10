@@ -138,12 +138,12 @@ INSERT INTO questions (question, answer) VALUES ("Do you have a doctor or nurse 
 INSERT INTO questions (question, answer) VALUES ("Do you accomodate children with special needs?", "If your child has special medical need, please contact EdCamps prior to registration.");
 INSERT INTO questions (question, answer) VALUES ("Should children bring spending money?", "Yes, snacks and drinks are available for purchase at the canteen throughout the day.");
 INSERT INTO questions (question, answer) VALUES ("What if my child has allergies or medical conditions?", "Please make sure to inform us when you check in.");
-INSERT INTO questions (question, answer) VALUES ("What should my child wear to camp?", "We recommend that students wear comfortable clothes like shorts, t-shirts and sneakers");
-INSERT INTO questions (question, answer) VALUES ("Where do I pick up and drop off my child?", "Pick up & drop off will occur at the camp's main enterance. We will not release any children without parent supervision.");
+INSERT INTO questions (question, answer) VALUES ("What should my child wear to camp?", "We recommend that students wear comfortable clothes like shorts, t-shirts and sneakers.");
+INSERT INTO questions (question, answer) VALUES ("Where do I pick up and drop off my child?", "Pick up & drop off will occur at the camp's main entrance. We will not release any children without parent supervision.");
 
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Sweatshirt", 25.00, 50, "sweatshirt.jpg");
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Water Bottle", 10.00, 30, "waterbottle.jpg");
-INSERT INTO inventory (name, price, remaining) VALUES ("Sticker", 3.00, 0);
+INSERT INTO inventory (name, price, remaining) VALUES ("Sticker", 3.00, 0,"sticker.jpg");
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("T-Shirt", 15.00, 20, "tshirt.jpg");
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Baseball cap", 10.00, 20, "hat.jpg");
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Backpack", 30.00, 30, "backpack.jpg");
