@@ -17,7 +17,7 @@ INSERT INTO activities (name, description) VALUES ("Horseback riding", "Join us 
 INSERT INTO activities (name, description) VALUES ("Disc golf", "See if you can traverse the disc golf course from beginning to end in the fewest number of disk throws.");
 INSERT INTO activities (name, description) VALUES ("Drawing", "Drawing and painting lessons available for students of all levels.");
 
-INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("SantaClara", 1, 1, "1234567890");
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Santa Clara", 1, 1, "1234567890");
 INSERT INTO addresses (address_1, city, state, zip) VALUES ('500 El Camino Real', 'Santa Clara', 'California', 95053);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1234 First Street', 'Santa Clara', 'California', 95050);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('710 Vari Court', 'San Jose', 'California', 95051);
@@ -30,7 +30,7 @@ INSERT INTO addresses (address_1, city, state,  zip) VALUES ('5433 Lambert Way',
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('653 Imperial Ave', 'Palo Alto', 'California', 94301);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('4324 Market Street', 'Los Gatos', 'California', 95030);
 
-INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("NewYork", 2, 2, "2345678901");
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("New York", 2, 2, "2345678901");
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('4683 Virginia Ave', 'New York', 'New York', 10001);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1092 Sunset Road', 'Brooklyn', 'New York', 11223);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('201 Stagecoach Road', 'New Brunswick', 'New Jersey', 08899);
