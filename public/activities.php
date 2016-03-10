@@ -21,14 +21,31 @@ require_once(TEMPLATES_PATH . "/header.php");
     echo "ERROR: " . mysqli_error($conn);
   }
 
+  $div_counter = 0; // will use 4 column bootstrap layout
   while ($row = mysqli_fetch_assoc($result)) {
+    global $div_counter;
+    if ($div_counter == 0) {
+      echo '<div class="row">';
+    }
     $name = $row['name'];
     $description = $row['description'];
-    echo '<div class="activity">';
+    $image_url = $row['image_url'];
+    if (!$image_url) {
+      $image_url = "http://placehold.it/200x200";
+    }
+    else {
+      $image_url = 'activities/' . $image_url;
+    }
+    echo '<div class="activity col-lg-3 col-md-3 col-sm-3">';
+    echo '<img src="' . $image_url . '" width="200" height="200" />';
     echo "<h3>$name</h3>";
     echo "<hr>";
     echo "<p>$description</p>";
     echo '</div>';
+    if ($div_counter == 3) {
+      echo '</div>';
+    }
+    $div_counter = ($div_counter + 1) % 4;
   }
   ?>
 </div>
