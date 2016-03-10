@@ -1,7 +1,7 @@
 INSERT INTO activities (name, description) VALUES ("Pottery", "Make your own customized bowls and plates out of clay.");
 INSERT INTO activities (name, description) VALUES ("3D Printing", "Make a three-dimensional object of your choice.");
 INSERT INTO activities (name, description) VALUES ("Swimming", "Swim at nearby lakes and waterparks and engage in a variety of water sports.");
-INSERT INTO activities (name, description) VALUES ("Soccer", "Play for fun or join our soccer tournament for a change to win prizes.");
+INSERT INTO activities (name, description) VALUES ("Soccer", "Play for fun or join our soccer tournament for a chance to win prizes.");
 INSERT INTO activities (name, description) VALUES ("Programming", "Learn the foundations of basic coding languages.");
 INSERT INTO activities (name, description) VALUES ("Robotics", "Utilize Lego Mindstorm kits and Robolab software to design your very own robot.");
 INSERT INTO activities (name, description) VALUES ("Tennis", "Tennis lessons available for all levels.");
