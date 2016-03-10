@@ -137,7 +137,7 @@ INSERT INTO questions (question, answer) VALUES ("If my child is injured when wi
 INSERT INTO questions (question, answer) VALUES ("Do you have a doctor or nurse onsite?", "Yes we have a medical team on site at all times.");
 INSERT INTO questions (question, answer) VALUES ("Do you accomodate children with special needs?", "If your child has special medical need, please contact EdCamps prior to registration.");
 INSERT INTO questions (question, answer) VALUES ("Should children bring spending money?", "Yes, snacks and drinks are available for purchase at the canteen throughout the day.");
-INSERT INTO questions (question, answer) VALUES ("What if my child has allergies or medical conditions?", "Please make sure to inform us when you check in.");
+INSERT INTO questions (question, answer) VALUES ("What if my child has allergies or medical conditions?", "Please make sure to inform us when you register your child or at check-in.");
 INSERT INTO questions (question, answer) VALUES ("What should my child wear to camp?", "We recommend that students wear comfortable clothes like shorts, t-shirts and sneakers.");
 INSERT INTO questions (question, answer) VALUES ("Where do I pick up and drop off my child?", "Pick up & drop off will occur at the camp's main entrance. We will not release any children without parent supervision.");
 
