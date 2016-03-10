@@ -103,11 +103,11 @@ INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-06-06", "2016-06-10", 400.00);
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-06-20", "2016-07-01", 750.00);
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-07-04", "2016-08-10", 350.00);
-INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-07-04", "2016-07-15", 450.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-07-04", "2016-07-15", 560.00);
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-07-18", "2016-07-29", 720.00);
-INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-08-01", "2016-08-12", 650.00);
-INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-08-15", "2016-08-19", 480.00);
-INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-08-22", "2016-08-29", 300.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-08-01", "2016-08-12", 700.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-08-15", "2016-08-26", 580.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-08-22", "2016-08-26", 300.00);
 
 # These were generated using fakenamegenerator.com
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Richard", "McDonald", "RichardSMcDonald@inbound.plus", 5087431076);
@@ -128,7 +128,7 @@ INSERT INTO users (first_name, last_name, email, phone) VALUES ("Amber", "Morris
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Samantha", "Stevens", "samstevens@gmail.com", 5406764342);
 
 INSERT INTO questions (question, answer) VALUES ("How many camp locations are there?", "There are 5 camp locations.");
-INSERT INTO questions (question, answer) VALUES ("How many sessions are there?", "Each campsite location has between 4 and 8 camp sessions.");
+INSERT INTO questions (question, answer) VALUES ("How many sessions are there?", "Each campsite location has 8 camp sessions.");
 INSERT INTO questions (question, answer) VALUES ("What is the deadline for signing up for a session?", "You can sign up as long as there is space available.");
 INSERT INTO questions (question, answer) VALUES ("Are there vegetarian options for lunch?", "Yes your child may request a vegetarian option for lunch.");
 INSERT INTO questions (question, answer) VALUES ("What happens if the session I want is already full?", "You may join our waitlist for this session free of charge. Just call 800-222-3443.");
