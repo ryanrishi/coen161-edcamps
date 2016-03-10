@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<title>Visualizations</title>
+<?php
+require_once('../resources/config.php');
+require_once(TEMPLATES_PATH . '/header.php');
+?>
+<div class="container container-fluid">
 <style>
 p {
   font: 15px sans-serif;
@@ -66,3 +69,5 @@ h1 {
   <div style="width: 310px;">Atlanta: 180</div>
   <div style="width: 350px;">New York: 220</div>
 </div>
+</div>
+?<?php require_once(TEMPLATES_PATH . '/footer.php'); ?>
