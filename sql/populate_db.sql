@@ -69,11 +69,21 @@ INSERT INTO addresses (address_1, city, state,  zip) VALUES ('354 Story Island A
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('5466 Jentry Way', 'Elmwood Park', 'Illinois', 60707);
 
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-06-06", "2016-06-17", 800.00);
-INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-06-20", "2016-07-01", 650.00);
-INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (3, "2016-07-04", "2016-07-15", 450.00);
-INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (4, "2016-07-18", "2016-07-29", 720.00);
-INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (5, "2016-08-01", "2016-08-12", 650.00);
-INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (6, "2016-08-15", "2016-08-26", 580.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-06-20", "2016-07-01", 650.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-07-04", "2016-07-15", 450.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-07-18", "2016-07-29", 720.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-08-01", "2016-08-12", 650.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-08-15", "2016-08-26", 580.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-08-08", "2016-08-12", 300.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-08-22", "2016-08-29", 300.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-06-06", "2016-06-10", 400.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-06-20", "2016-07-01", 750.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-07-04", "2016-08-10", 350.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-07-04", "2016-07-15", 450.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-07-18", "2016-07-29", 720.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-08-01", "2016-08-12", 650.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-08-15", "2016-08-19", 480.00);
+INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-08-22", "2016-08-29", 300.00);
 
 # These were generated using fakenamegenerator.com
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Richard", "McDonald", "RichardSMcDonald@inbound.plus", 5087431076);
@@ -113,5 +123,4 @@ INSERT INTO inventory (name, price, remaining) VALUES ("Sticker", 3.00, 0);
 INSERT INTO inventory (name, price, remaining) VALUES ("T-Shirt", 15.00, 20);
 INSERT INTO inventory (name, price, remaining) VALUES ("Baseball cap", 10.00, 20);
 INSERT INTO inventory (name, price, remaining) VALUES ("Backpack", 30.00, 30);
-INSERT INTO inventory (name, price, remaining) VALUES ("Sticker", 3.00, 0);
 INSERT INTO inventory (name, price, remaining) VALUES ("Notebook", 3.00, 10);
