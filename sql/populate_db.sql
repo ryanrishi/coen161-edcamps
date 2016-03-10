@@ -143,7 +143,7 @@ INSERT INTO questions (question, answer) VALUES ("Where do I pick up and drop of
 
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Sweatshirt", 25.00, 50, "sweatshirt.jpg");
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Water Bottle", 10.00, 30, "waterbottle.jpg");
-INSERT INTO inventory (name, price, remaining) VALUES ("Sticker", 3.00, 0,"sticker.jpg");
+INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Sticker", 3.00, 0, "sticker.jpg");
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("T-Shirt", 15.00, 20, "tshirt.jpg");
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Baseball cap", 10.00, 20, "hat.jpg");
 INSERT INTO inventory (name, price, remaining, image_url) VALUES ("Backpack", 30.00, 30, "backpack.jpg");
