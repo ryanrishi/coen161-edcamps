@@ -24,7 +24,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     });
   });
   </script>
-  <form class="registration-form" action="register.php" method="post">
+  <form class="registration-form" action="register2.php" method="post">
     <div class="camper-information">
       <h3>Camper Information</h3>
       <hr>
