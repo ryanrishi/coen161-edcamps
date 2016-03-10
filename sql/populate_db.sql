@@ -26,15 +26,21 @@ INSERT INTO addresses (address_1, city, state,  zip) VALUES ('12 Mckenzie Street
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('99 Tempview Drive', 'Sunnyvale', 'California', 94085);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('323 Creekview Street', 'San Jose', 'California', 95051);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1500 Mcalistar Court', 'Sunnyvale', 'California', 94085);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('5433 Lambert Way', 'Sunnyvale', 'California', 94085);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('653 Imperial Ave', 'Palo Alto', 'California', 94301);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('4324 Market Street', 'Los Gatos', 'California', 95030);
 
 INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Second Campsite", 1, 2, "2345678901");
-INSERT INTO addresses (address_2, city, state,  zip) VALUES ('4683 Virginia Ave', 'New York', 'New York', 10001);
-INSERT INTO addresses (address_2, city, state,  zip) VALUES ('1092 Sunset Road', 'Brooklyn', 'New York', 11223);
-INSERT INTO addresses (address_2, city, state,  zip) VALUES ('201 Stagecoach Road', 'New Brunswick', 'New Jersey', 08899);
-INSERT INTO addresses (address_2, city, state,  zip) VALUES ('120 Hendricks Court', 'Newark', 'New Jersey', 07100);
-INSERT INTO addresses (address_2, city, state,  zip) VALUES ('605 Meadowside Street', 'Norwalk', 'Connecticut', 06850);
-INSERT INTO addresses (address_2, city, state,  zip) VALUES ('409 Ford Drive', 'Darian', 'Connecticut', 06820);
-INSERT INTO addresses (address_2, city, state,  zip) VALUES ('2356 Houston Street', 'Manhattan', 'New York', 10026);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('4683 Virginia Ave', 'New York', 'New York', 10001);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1092 Sunset Road', 'Brooklyn', 'New York', 11223);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('201 Stagecoach Road', 'New Brunswick', 'New Jersey', 08899);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('120 Hendricks Court', 'Newark', 'New Jersey', 07100);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('605 Meadowside Street', 'Norwalk', 'Connecticut', 06850);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('409 Ford Drive', 'Darian', 'Connecticut', 06820);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('2356 Houston Street', 'Manhattan', 'New York', 10026);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('653 22nd Street', 'Manhattan', 'New York', 10026);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('32 Beverly Rd', 'Newark', 'New Jersey', 07100);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
 
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-06-06", "2016-06-17", 800.00);
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-06-20", "2016-07-01", 650.00);
