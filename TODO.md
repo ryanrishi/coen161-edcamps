@@ -89,5 +89,7 @@ TODO
 - schedule (on home page)
 - visualization page
   - two graphs
-- activity page
-  - games/puzzles
+- ~~~activity page~~~
+  - ~~~games/puzzles~~~
+- parent needs to be able to see children's registration info
+- fake payments (and discounts on registration page)
