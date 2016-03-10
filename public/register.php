@@ -5,6 +5,8 @@ require_once(TEMPLATES_PATH . "/header.php");
 <div class="container container-fluid">
   <?php
 
+  $registration_success = NULL;
+
   // check form
   if (isset($_POST["camper_first_name"])) {
     // camper info
@@ -24,6 +26,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     || empty($_POST["card_exp"])
     || empty($_POST["card_cvv"])) {
       // error
+      echo "ERROR: Form not complete.";
       error_log('ERROR: register.php -- Form not complete.');
     }
 
@@ -31,8 +34,13 @@ require_once(TEMPLATES_PATH . "/header.php");
 
     if (!validate_email($_POST["parent_email"] || !validate_phone($_POST["parent_phone"]))) {
       // error
+      $registration_success = False;
+      echo '<span class="error">Not a valid email or phone number.</span>';
+      echo $_POST['parent_email'] . ' ' . $_POST['parent_phone'];
     }
   }
+
+  // var_dump($_POST);
 
   // if this is reached, it assumes form has been validated
   require_once("helpers/db.php");
@@ -60,31 +68,33 @@ require_once(TEMPLATES_PATH . "/header.php");
 
   // create parent in database if doesn't exist
   $sql = "SELECT * FROM users
-          WHERE first_name='$camper_first_name',
-          last_name='$camper_last_name',
+          WHERE first_name='$parent_first',
+          last_name='$parent_last',
           email='$parent_email'";
-  $results = $conn->query($sql);
+  $result = $conn->query($sql);
 
   $parent_id = NULL;
-  if (!$results) {
+  if (!$result) {
     // parent does not exist in database (or error?)
-    $sql = "INSERT INTO `users` (`first_name`, `last_name`, `email`, `phone`)
-    VALUES ('$parent_first', '$parent_last', '$parent_email', $parent_phone)";
+    $sql = "INSERT INTO users (first_name, last_name, email, phone)
+    VALUES ($parent_first,
+      $parent_last,
+      $parent_email,
+      $parent_phone)";
     error_log($sql);
-    $conn->query($sql);
+    $result = $conn->query($sql);
     $parent_id = mysqli_insert_id($conn);
+    if ($result == False) {
+      // an error ooccured
+      $registration_success = False;
+      echo '<span class="error">Error inserting user into database. ' . mysqli_error($conn) . '</span>';
+    }
   }
   else {
-    $row = mysqli_fetch_assoc($results);
-    var_dump($row);
+    // parent already exists in database
+    $row = mysqli_fetch_assoc($result);
+    $parent_id = $row['id'];
   }
-
-  var_dump($results);
-
-  // if ($row = mysqli_fetch_assoc($results)) {
-  //   // need to fetch parent id
-  //   $parent_id = $row['id'];  // TODO what if there is more than one row? Will that ever happen?
-  // }
 
   error_log("register.php parent_id $parent_id");
 
@@ -94,11 +104,37 @@ require_once(TEMPLATES_PATH . "/header.php");
           AND last_name='$camper_last_name'
           AND dob='$camper_dob'";
   $result = $conn->query($sql);
+  $camper_id = NULL;
   if (!$result) {
     // camper does not exist (or error?)
     $sql = "INSERT INTO campers (first_name, last_name, dob, grade, notes, parent1_id)
     VALUES ('$camper_first_name', '$camper_last_name', '$camper_dob', '$camper_grade', '$camper_notes', $parent_id
     )";
+    $result = $conn->query($sql);
+    $camper_id = mysqli_insert_id($conn);
+    if ($result == False) {
+      $registration_success = False;
+      echo '<span class="error">Error inserting camper into database. ' . mysqli_error($conn) . '</span>';
+    }
+  }
+  else {
+    // camper does exist in database
+    $row = mysqli_fetch_assoc($result);
+    $camper_id = $row['id'];
+  }
+
+  // insert into registrations table
+  $camp_session_id = $_POST['session'];
+  $sql = "INSERT INTO registrations (camper_id, session_id) VALUES ($camper_id, $camp_session_id)";
+  $result = $conn->query($sql);
+
+  if ($result == False) {
+    $registration_success = False;
+    echo '<span class="error">Error inserting registration into database. ' . mysqli_error($conn) . '</span>';
+  }
+
+  if ($registration_success != False) {
+    echo "Congratulations, you're registered!";
   }
   ?>
 </div>
