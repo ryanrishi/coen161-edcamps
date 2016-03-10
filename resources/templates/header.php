@@ -59,7 +59,15 @@
             $row = mysqli_fetch_assoc($result);
             $first_name = $row['first_name'];
             $last_name = $row['last_name'];
-            echo '<li><a id="login" class="account-name" href="#">' . $first_name . ' ' . $last_name . '</a></li>';
+            echo '<li class="dropdown">';
+            echo '<a href="#" id="login" class="dropdown-toggle account-name" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $first_name . ' ' . $last_name . '<span class="caret"></span></a>';
+            echo '<ul class="dropdown-menu">';
+            echo '<li><a href="#">Account</a></li>';
+            echo '<li><a href="faq.php">FAQ</a></li>';
+            echo '<li><a href="#" class="logout">Logout</a></li>';
+            echo '</li>';
+            echo '</ul>';
+            // echo '<li><a id="login" class="account-name" href="#">' . $first_name . ' ' . $last_name . '</a></li>';
           }
           else {
             // not logged in
@@ -80,4 +88,18 @@
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
+    <script>
+    // quick and dirty logout script
+    $(document).ready(function() {
+      $('nav .logout').click(function() {
+        $.ajax({
+          url: 'logout.php',
+          method: 'POST',
+          success: function() {
+            $('.account-name').text('Login');
+          }
+        });
+      });
+    });
+    </script>
   </nav>
