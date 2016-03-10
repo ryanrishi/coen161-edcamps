@@ -14,7 +14,6 @@ require_once(TEMPLATES_PATH . "/header.php");
         // TODO
       });
     });
-
     // validate phone number
     $('.phone').each(function(i, el) {
       $(el).change(function() {
@@ -23,9 +22,6 @@ require_once(TEMPLATES_PATH . "/header.php");
         // TODO
       });
     });
-
-    // validate dates
-    // TODO
   });
   </script>
   <form class="registration-form" action="register.php" method="post">
@@ -34,20 +30,20 @@ require_once(TEMPLATES_PATH . "/header.php");
       <hr>
       <div class="form-group">
         <label>First</label>
-        <input type="text" name="camper_first_name" value="" placeholder="First">
+        <input type="text" name="camper_first_name" value="" placeholder="First" required>
       </div>
       <div class="form-group">
         <label>Last</label>
-        <input type="text" name="camper_last_name" value="" placeholder="Last">
+        <input type="text" name="camper_last_name" value="" placeholder="Last" required>
       </div>
       <div class="form-group">
         <label>Date of Birth</label>
-        <input type="text" class="date datepicker" name="camper_dob" placeholder="mm/dd/yyyy">
+        <input type="text" class="date datepicker" name="camper_dob" placeholder="mm/dd/yyyy" required>
       </div>
       <div class="form-group">
         <label>Grade level</label>
 
-        <select name="camper_grade">
+        <select name="camper_grade" required>
           <?php
           $supported_grades = array("K", 1, 2, 3, 4, 5);
           foreach ($supported_grades as $key => $grade) {
@@ -58,11 +54,11 @@ require_once(TEMPLATES_PATH . "/header.php");
       </div>
       <div class="form-group">
         <label>Allergies, notes, etc.</label>
-        <input type="text" name="camper_notes" value="">
+        <input type="text" name="camper_notes">
       </div>
       <div class="form-group">
         <label>Camp location</label>
-        <select class="campsite-location" name="campsite_location" onchange="showSessionsForSelectedLocation()">
+        <select class="campsite-location" name="campsite_location" onchange="showSessionsForSelectedLocation()" required>
           <?php
           require_once("helpers/db.php");
           $conn = get_db_conn();
@@ -107,7 +103,7 @@ require_once(TEMPLATES_PATH . "/header.php");
               var $sessions = $('.active-sessions-for-selected-location');
               // empty the sessions table
               $sessions.empty();
-              var tableHeader = '<tr><th></th><th>Camp Session</th><th>Start Date</th><th>End Date</th><th>Cost</th></tr>';
+              var tableHeader = '<tr><th></th><th>Start Date</th><th>End Date</th><th>Cost</th></tr>';
               $sessions.append(tableHeader);
               data.forEach(function(d) {
                 var tableRow = $(document.createElement('tr'));
@@ -190,15 +186,15 @@ require_once(TEMPLATES_PATH . "/header.php");
         <hr>
         <div class="form-group">
           <label>First</label>
-          <input type="text" name="parent_first_name" value="<?php global $parent_first; echo $parent_first; ?>" placeholder="First">
+          <input type="text" name="parent_first_name" value="<?php global $parent_first; echo $parent_first; ?>" placeholder="First" required>
         </div>
         <div class="form-group">
           <label>Last</label>
-          <input type="text" name="parent_last_name" value="<?php global $parent_last; echo $parent_last; ?>" placeholder="Last">
+          <input type="text" name="parent_last_name" value="<?php global $parent_last; echo $parent_last; ?>" placeholder="Last" required>
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="text" class="email" name="parent_email" value="<?php global $parent_email; echo $parent_email; ?>" onchange="emailDidChange()" placeholder="email">
+          <input type="text" class="email" name="parent_email" value="<?php global $parent_email; echo $parent_email; ?>" onchange="emailDidChange()" placeholder="email" required>
         </div>
         <div class="form-group">
           <label>Phone</label>
@@ -212,7 +208,7 @@ require_once(TEMPLATES_PATH . "/header.php");
         <div class="form-group">
           <label>Card Type</label>
 
-          <select class="" name="card_type">
+          <select class="" name="card_type" required>
             <?php
             $supported_cards = array("MasterCard", "Visa", "Discover", "American Express");
             foreach($supported_cards as $key => $card) {
@@ -223,15 +219,15 @@ require_once(TEMPLATES_PATH . "/header.php");
         </div>
         <div class="form-group">
           <label>Card Number</label>
-          <input type="text" name="card_number" value="" placeholder="XXXX XXXX XXXX XXXX">
+          <input type="text" name="card_number" class="card-number" required>
         </div>
         <div class="form-group">
           <label>Expiration Date</label>
-          <input class="date datepicker" type="text" name="card_exp" value="" placeholder="mm/yyyy">
+          <input class="date datepicker" type="text" class="datepicker-month-year card-exp" name="card_exp" required>
         </div>
         <div class="form-group">
           <label>CVV</label>
-          <input type="text" name="card_cvv" value="" placehodler="XXX">
+          <input type="text" class="card-cvv" name="card_cvv" required>
         </div>
       </div>
 
@@ -243,6 +239,8 @@ require_once(TEMPLATES_PATH . "/header.php");
   $(document).ready(function() {
     $('.datepicker').datepicker();
     $('.phone-number').mask('(999) 999-9999');
+    $('.card-number').mask('9999 9999 9999 9999');
+    // $('.card-exp').mask('99/9999')
   });
   </script>
   <?php require_once(TEMPLATES_PATH . "/footer.php"); ?>
