@@ -45,7 +45,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 
         <select name="camper_grade" required>
           <?php
-          $supported_grades = array("K", 1, 2, 3, 4, 5);
+          $supported_grades = array(1, 2, 3, 4, 5);
           foreach ($supported_grades as $key => $grade) {
             echo "<option value=$grade>$grade</option>";
           }
