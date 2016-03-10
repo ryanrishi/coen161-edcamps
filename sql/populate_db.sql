@@ -114,5 +114,4 @@ INSERT INTO inventory (name, price, remaining) VALUES ("T-Shirt", 15.00, 20);
 INSERT INTO inventory (name, price, remaining) VALUES ("Baseball cap", 10.00, 20);
 INSERT INTO inventory (name, price, remaining) VALUES ("Backpack", 30.00, 30);
 INSERT INTO inventory (name, price, remaining) VALUES ("Sticker", 3.00, 0);
-INSERT INTO inventory (name, price, remaining) VALUES ("Sunglasses", 10.00, 15);
 INSERT INTO inventory (name, price, remaining) VALUES ("Notebook", 3.00, 10);
