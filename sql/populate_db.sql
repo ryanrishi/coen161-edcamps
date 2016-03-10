@@ -15,10 +15,15 @@ INSERT INTO activities (name, description) VALUES ("Biking", "Mountain biking");
 INSERT INTO activities (name, description) VALUES ("Zoo", "Spend the day enjoying the zoo");
 INSERT INTO activities (name, description) VALUES ("Horseback riding", "Horseback riding on forest trails");
 INSERT INTO activities (name, description) VALUES ("Frisbee golf", "Frisbee golf at the park");
+INSERT INTO activities (name, description) VALUES ("Drawing", "Drawing and painting lessons");
 
 INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("MyCampsite", 1, 2, "1234567890");
 INSERT INTO addresses (address_1, city, state, zip) VALUES ('500 El Camino Real', 'Santa Clara', 'California', 95053);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1234 First Street', 'Santa Clara', 'California', 95050);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('710 Vari Court', 'San Jose', 'California', 95051);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('222 Saratoga Ave', 'Mountain View', 'California', 94035);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('12 Mckenzie Street', 'Palo Alto', 'California', 94301);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('99 Tempview Drive', 'Sunnyvale', 'California', 94085);
 
 INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Second Campsite", 1, 2, "2345678901");
 
