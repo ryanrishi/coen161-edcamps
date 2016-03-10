@@ -43,7 +43,7 @@ CREATE TABLE users(
   first_name TINYTEXT NOT NULL,
   last_name TINYTEXT NOT NULL,
   email TINYTEXT NOT NULL,
-  phone TINYTEXT NOT NULL
+  phone TINYTEXT
 );
 
 CREATE TABLE campers(
