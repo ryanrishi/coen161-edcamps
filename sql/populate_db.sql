@@ -17,7 +17,7 @@ INSERT INTO activities (name, description) VALUES ("Horseback riding", "Horsebac
 INSERT INTO activities (name, description) VALUES ("Frisbee golf", "Frisbee golf at the park");
 INSERT INTO activities (name, description) VALUES ("Drawing", "Drawing and painting lessons");
 
-INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("MyCampsite", 1, 2, "1234567890");
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("SantaClara", 1, 2, "1234567890");
 INSERT INTO addresses (address_1, city, state, zip) VALUES ('500 El Camino Real', 'Santa Clara', 'California', 95053);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1234 First Street', 'Santa Clara', 'California', 95050);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('710 Vari Court', 'San Jose', 'California', 95051);
@@ -30,7 +30,7 @@ INSERT INTO addresses (address_1, city, state,  zip) VALUES ('5433 Lambert Way',
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('653 Imperial Ave', 'Palo Alto', 'California', 94301);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('4324 Market Street', 'Los Gatos', 'California', 95030);
 
-INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Second Campsite", 1, 2, "2345678901");
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("NewYork", 1, 2, "2345678901");
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('4683 Virginia Ave', 'New York', 'New York', 10001);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1092 Sunset Road', 'Brooklyn', 'New York', 11223);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('201 Stagecoach Road', 'New Brunswick', 'New Jersey', 08899);
@@ -42,11 +42,28 @@ INSERT INTO addresses (address_1, city, state,  zip) VALUES ('653 22nd Street', 
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('32 Beverly Rd', 'Newark', 'New Jersey', 07100);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
 
-INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Third Campsite", 1, 2, "2723457876");
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Portland", 1, 2, "2723457876");
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('4356 Evergreen Rd', 'Lake Oswego', 'Oregon', 97034);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('1023 Riverside Dr', 'Portland', 'Oregon', 97024);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('12 Morrison Street', 'Portland', 'Oregon', 97021);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('545 Hawthorne Blvd', 'Milwaukie', 'Oregon', 97222);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('653 Gable Ave', 'Vancouver', 'Washington', 98660);
 
-INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Fourth Campsite", 1, 2, "8123450678");
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Atlanta", 1, 2, "8123450678");
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
 
-INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Fifth Campsite", 1, 2, "3267865467");
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Chicago", 1, 2, "3267865467");
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
+INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
 
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-06-06", "2016-06-17", 800.00);
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-06-20", "2016-07-01", 650.00);
