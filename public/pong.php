@@ -146,7 +146,7 @@ require_once(TEMPLATES_PATH . '/header.php');
         renderer.render(scene, camera);
       });
       </script>
-      <script src="/resources/lib/js/three.min.js"></script>
+      <script src="../resources/lib/js/three.min.js"></script>
     </div>
   </div>
   <?php require_once(TEMPLATES_PATH . '/footer.php'); ?>
