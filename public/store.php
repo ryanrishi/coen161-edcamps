@@ -28,8 +28,15 @@ require_once(TEMPLATES_PATH . "/header.php");
     $name = $row['name'];
     $price = money_format("%n", $row['price']);
     $remaining = $row['remaining'];
+    $image_url = $row['image_url'];
+    if (!$image_url) {
+      $image_url = "http://placehold.it/200x200";
+    }
+    else {
+      $image_url = "img/store/" . $image_url;
+    }
     echo '<div class="store-item col-lg-3 col-md-3 col-sm-3">';
-    echo '<img src="http://placehold.it/200x200" />';
+    echo '<img src="' . $image_url . '" width="200" height="200" />';
     echo '<p class="item-name">' . $name . '</p>';
     echo '<p class="item-price">' . $price . '</p>';
     if ($remaining > 0) {
