@@ -10,6 +10,11 @@ INSERT INTO activities (name, description) VALUES ("Kayaking", "Kayak and race a
 INSERT INTO activities (name, description) VALUES ("Basketball", "Join a team for our basketball tournament");
 INSERT INTO activities (name, description) VALUES ("Pre-programming", "Learn math programming foundations");
 INSERT INTO activities (name, description) VALUES ("Rock climbing", "Join us as attend a rock climbing gym");
+INSERT INTO activities (name, description) VALUES ("Baseball", "Baseball and softball tournaments");
+INSERT INTO activities (name, description) VALUES ("Biking", "Mountain biking");
+INSERT INTO activities (name, description) VALUES ("Zoo", "Spend the day enjoying the zoo");
+INSERT INTO activities (name, description) VALUES ("Horseback riding", "Horseback riding on forest trails");
+INSERT INTO activities (name, description) VALUES ("Frisbee golf", "Frisbee golf at the park");
 
 INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("MyCampsite", 1, 2, "1234567890");
 INSERT INTO addresses (address_1, city, state, zip) VALUES ('500 El Camino Real', 'Santa Clara', 'California', 95053);
