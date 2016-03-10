@@ -217,9 +217,11 @@ require_once(TEMPLATES_PATH . "/header.php");
       <input type="button" name="submit" value="Submit" class="btn">
     </form>
   </div>
+  <script src="../resources/lib/js/jquery.mask.min.js" type="text/javascript"></script>
   <script>
   $(document).ready(function() {
     $('.datepicker').datepicker();
+    $('.phone-number').mask('(999) 999-9999');
   });
   </script>
   <?php require_once(TEMPLATES_PATH . "/footer.php"); ?>
