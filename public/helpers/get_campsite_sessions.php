@@ -17,7 +17,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     "id" => $row["id"],
     "start" => $row["start_date"],
     "end" => $row["end_date"],
-    "base_price" => $row["base_price"]);
+    "base_price" => money_format("%n", $row["base_price"]));
 }
 
 echo json_encode($data);

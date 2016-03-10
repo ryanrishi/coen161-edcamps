@@ -116,14 +116,16 @@ require_once(TEMPLATES_PATH . "/header.php");
                 radio.setAttribute('type', 'radio');
                 radio.setAttribute('name', 'session');
                 radio.setAttribute('value', d.id);
+                $(radio).prop('required', true);
                 var td = $(document.createElement('td'));
                 td.append(radio);
                 tableRow.append(td);
                 for (key in d) {
                   if (d.hasOwnProperty(key)) {
                     var td = $(document.createElement('td'));
-                    if (key === 'base_price') {
-                      td.append('$' + parseFloat(d[key]).toFixed(2));
+                    if (key === 'id') {
+                      // skip id
+                      continue;
                     }
                     else {
                       td.append(d[key]);
