@@ -42,6 +42,12 @@ INSERT INTO addresses (address_1, city, state,  zip) VALUES ('653 22nd Street', 
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('32 Beverly Rd', 'Newark', 'New Jersey', 07100);
 INSERT INTO addresses (address_1, city, state,  zip) VALUES ('6567 Madison Circle', 'Rutherford', 'New Jersey', 07073);
 
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Third Campsite", 1, 2, "2723457876");
+
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Fourth Campsite", 1, 2, "8123450678");
+
+INSERT INTO campsites (name, campsite_address_id, office_address_id, phone) VALUES ("Fifth Campsite", 1, 2, "3267865467");
+
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (1, "2016-06-06", "2016-06-17", 800.00);
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (2, "2016-06-20", "2016-07-01", 650.00);
 INSERT INTO camp_sessions (campsite_id, start_date, end_date, base_price) VALUES (3, "2016-07-04", "2016-07-15", 450.00);
