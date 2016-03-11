@@ -141,9 +141,9 @@ INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Mar
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Jenna", "Lawrence", 10/25/2007, 4, 10);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Peter", "Owens", 12/04/2010, 1, 11);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Jane", "Heffernen", 07/26/2006, 5, 12);
-INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Eliza", "Jackson", 08/14/2009, 1, 6);
-INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Caitlin", "Martinez", 02/14/2005, 1, 14);
-INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Michael", "Blake", 02/14/2005, 1, 15);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Eliza", "Jackson", 08/14/2009, 2, 13);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Caitlin", "Martinez", 02/17/2009, 2, 14);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Michael", "Blake", 06/20/2007,4,15);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("James", "Morrison", 02/14/2005, 1, 16);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Charlotte", "Mcdermott", 02/14/2005, 1, 17);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Patrick", "Mcdermott", 02/14/2005, 1, 17);
