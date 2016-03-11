@@ -127,7 +127,17 @@ INSERT INTO users (first_name, last_name, email, phone) VALUES ("Martin", "Delga
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Amber", "Morris", "amorris@hotmail.com", 3409586790);
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Samantha", "Stevens", "samstevens@gmail.com", 5406764342);
 
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Timmy", "Gonzalez", 05/24/2007, 4, 1);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Jason", "Romero", 03/04/2006, 5, 2);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Lily", "Romero", 12/06/2008 3, 2);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Sophie", "Stone", 10/12/2007, 4, 3);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Mark", "Eaton", 08/15/2009, 2, 4);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Timmy", "Gonzalez", 05/24/2005, 4, 1);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Timmy", "Gonzalez", 05/24/2005, 4, 1);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Timmy", "Gonzalez", 05/24/2005, 4, 1);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Timmy", "Gonzalez", 05/24/2005, 4, 1);
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Timmy", "Gonzalez", 05/24/2005, 4, 1);
+
 INSERT INTO registrations (camper_id, session_id) VALUES (1, 1);
 
 INSERT INTO questions (question, answer) VALUES ("How many camp locations are there?", "There are 5 camp locations.");
