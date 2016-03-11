@@ -93,3 +93,12 @@ TODO
   - ~~~games/puzzles~~~
 - parent needs to be able to see children's registration info
 - fake payments (and discounts on registration page)
+- fix registration (even if it's a dummy script)
+- register multiple children --> discount
+- make visualizations dynamic (?)
+- login / registration
+- form validation (client-side and server-side)
+- ~~ability to view child's schedule~~
+- activities vary by campsite (?)
+- put dummy campers in db
+- put dummy registrations in db
