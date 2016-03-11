@@ -129,7 +129,7 @@ INSERT INTO users (first_name, last_name, email, phone) VALUES ("Samantha", "Ste
 
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id, camper_id) VALUES ("Timmy", "Gonzalez", 05/24/2007, 4, 1, 1);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id, camper_id) VALUES ("Jason", "Romero", 03/04/2006, 5, 2, 2);
-INSERT INTO campers (first_name, last_name, dob, grade, parent1_id, camper_id) VALUES ("Lily", "Romero", 12/06/2008 3, 2, 3 );
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id, camper_id) VALUES ("Lily", "Romero", 12/06/2008 3, 2, 3);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id, camper_id) VALUES ("Sophie", "Stone", 10/12/2007, 4, 3, 4);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id, camper_id) VALUES ("Mark", "Eaton", 08/15/2009, 2, 4, 5);
 INSERT INTO campers (first_name, last_name, dob, grade, parent1_id, camper_id) VALUES ("Jennifer", "Eaton",11/22/2010, 1, 4, 6);
@@ -153,7 +153,7 @@ INSERT INTO registrations (camper_id, session_id) VALUES (2, 2);
 INSERT INTO registrations (camper_id, session_id) VALUES (3, 3);
 INSERT INTO registrations (camper_id, session_id) VALUES (4, 4);
 INSERT INTO registrations (camper_id, session_id) VALUES (5, 4);
-INSERT INTO registrations (camper_id, session_id) VALUES (6, 4);
+INSERT INTO registrations (camper_id, session_id) VALUES (6, 7);
 INSERT INTO registrations (camper_id, session_id) VALUES (7, 5);
 INSERT INTO registrations (camper_id, session_id) VALUES (8, 6);
 INSERT INTO registrations (camper_id, session_id) VALUES (9, 7);
