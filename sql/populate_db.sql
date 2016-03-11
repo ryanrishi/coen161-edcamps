@@ -127,6 +127,9 @@ INSERT INTO users (first_name, last_name, email, phone) VALUES ("Martin", "Delga
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Amber", "Morris", "amorris@hotmail.com", 3409586790);
 INSERT INTO users (first_name, last_name, email, phone) VALUES ("Samantha", "Stevens", "samstevens@gmail.com", 5406764342);
 
+INSERT INTO campers (first_name, last_name, dob, grade, parent1_id) VALUES ("Timmy", "Gonzalez", 05/24/2005, 4, 1);
+INSERT INTO registrations (camper_id, session_id) VALUES (1, 1);
+
 INSERT INTO questions (question, answer) VALUES ("How many camp locations are there?", "There are 5 camp locations.");
 INSERT INTO questions (question, answer) VALUES ("How many sessions are there?", "Each campsite location has 8 camp sessions.");
 INSERT INTO questions (question, answer) VALUES ("What is the deadline for signing up for a session?", "You can sign up as long as there is space available.");

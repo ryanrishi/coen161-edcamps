@@ -23,7 +23,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="registration.php">Schedule and Registration<span class="sr-only">(current)</span></a></li>
+          <li><a href="registration.php">Registration<span class="sr-only">(current)</span></a></li>
           <li><a href="activities.php">Activities</a></li>
           <li><a href="visualizations.php">Visualizations</a></li>
           <!-- <li class="dropdown">
@@ -63,7 +63,7 @@
             echo '<li class="dropdown">';
             echo '<a href="#" id="login" class="dropdown-toggle account-name" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $first_name . ' ' . $last_name . '<span class="caret"></span></a>';
             echo '<ul class="dropdown-menu">';
-            echo '<li><a href="#">Account</a></li>';
+            echo '<li><a href="schedule.php">View My Child\'s Schedule</a></li>';
             echo '<li><a href="faq.php">FAQ</a></li>';
             echo '<li><a href="#" class="logout">Logout</a></li>';
             echo '</li>';
