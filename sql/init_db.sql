@@ -1,10 +1,25 @@
+# Use this when running locally
 # purge old database
-DROP DATABASE edcamps;
 
-CREATE DATABASE edcamps;
+-- DROP DATABASE edcamps;
 
-USE edcamps;
+-- CREATE DATABASE edcamps;
 
+-- USE edcamps;
+
+# Use this when running on DC
+USE sdb_rrishi;
+DROP TABLE activities;
+DROP TABLE campsites;
+DROP TABLE addresses;
+DROP TABLE inventory;
+DROP TABLE users;
+DROP TABLE campers;
+DROP TABLE camp_sessions;
+DROP TABLE registrations;
+DROP TABLE questions;
+
+# Use everthing else on both DC and when running locally
 CREATE TABLE activities(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   name TINYTEXT NOT NULL,
