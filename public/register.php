@@ -19,7 +19,6 @@ require_once(TEMPLATES_PATH . "/header.php");
     || empty($_POST["parent_first_name"])
     || empty($_POST["parent_last_name"])
     || empty($_POST["parent_email"])
-    || empty($_POST["parent_phone"])
     // payment info
     || empty($_POST["card_type"])
     || empty($_POST["card_number"])
@@ -30,14 +29,17 @@ require_once(TEMPLATES_PATH . "/header.php");
       error_log('ERROR: register.php -- Form not complete.');
     }
 
+    print_r($_POST);
+
     require_once("helpers/validation.php");
 
-    if (!validate_email($_POST["parent_email"] || !validate_phone($_POST["parent_phone"]))) {
-      // error
-      $registration_success = False;
-      echo '<span class="error">Not a valid email or phone number.</span>';
-      echo $_POST['parent_email'] . ' ' . $_POST['parent_phone'];
-    }
+    // TODO validate phone and email
+    // if (!validate_email($_POST["parent_email"] || !validate_phone($_POST["parent_phone"]))) {
+    //   // error
+    //   $registration_success = False;
+    //   echo '<span class="error">Not a valid email or phone number.</span>';
+    //   echo $_POST['parent_email'] . ' ' . $_POST['parent_phone'];
+    // }
   }
 
   // var_dump($_POST);
@@ -46,44 +48,64 @@ require_once(TEMPLATES_PATH . "/header.php");
   require_once("helpers/db.php");
 
   // camper info
-  $camper_first_name = $_POST["camper_first_name"];
-  $camper_last_name = $_POST["camper_last_name"];
-  $camper_dob = $_POST["camper_dob"];
-  $camper_notes = $_POST["camper_notes"];
-  $camper_grade = $_POST["camper_grade"];
+  $camper = array(
+    "first" => $_POST["camper_first_name"],
+    "last" => $_POST["camper_last_name"],
+    "dob" => $_POST["camper_dob"],
+    "notes" => $_POST["camper_notes"],
+    "grade" => $_POST["camper_grade"]
+  );
+
+  // $camper_first_name = $_POST["camper_first_name"];
+  // $camper_last_name = $_POST["camper_last_name"];
+  // $camper_dob = $_POST["camper_dob"];
+  // $camper_notes = $_POST["camper_notes"];
+  // $camper_grade = $_POST["camper_grade"];
 
   // parent info
-  $parent_first = $_POST["parent_first_name"];
-  $parent_last = $_POST["parent_last_name"];
-  $parent_email = $_POST["parent_email"];
-  $parent_phone = $_POST["parent_phone"];
+  $parent = array(
+    "first" => $_POST["parent_first_name"],
+    "last" => $_POST["parent_last_name"],
+    "email" => $_POST["parent_email"],
+    "phone" => $_POST["parent_phone"]
+  );
+  // $parent_first = $_POST["parent_first_name"];
+  // $parent_last = $_POST["parent_last_name"];
+  // $parent_email = $_POST["parent_email"];
+  // $parent_phone = $_POST["parent_phone"];
 
   // payment info
-  $payment_card_type = $_POST["card_type"];
-  $payment_card_number = $_POST["card_number"];
-  $payment_card_exp = $_POST["card_exp"];
-  $payment_card_cvv = $_POST["card_cvv"];
+  $payment = array(
+    "card_type" => $_POST["card_type"],
+    "number" => $_POST["card_number"],
+    "expiration" => $_POST["card_exp"],
+    "cvv" => $_POST["card_cvv"]
+  );
+  // $payment_card_type = $_POST["card_type"];
+  // $payment_card_number = $_POST["card_number"];
+  // $payment_card_exp = $_POST["card_exp"];
+  // $payment_card_cvv = $_POST["card_cvv"];
 
   $conn = get_db_conn();
 
   // create parent in database if doesn't exist
   $sql = "SELECT * FROM users
-          WHERE first_name='$parent_first',
-          last_name='$parent_last',
-          email='$parent_email'";
+          WHERE first_name='$parent[first]',
+          last_name='$parent[last]',
+          email='$parent[email]'";
   $result = $conn->query($sql);
 
-  $parent_id = NULL;
   if (!$result) {
+    echo "Error getting users from database.";
+  }
+
+  if ($result->num_rows === 0) {
     // parent does not exist in database (or error?)
     $sql = "INSERT INTO users (first_name, last_name, email, phone)
-    VALUES ($parent_first,
-      $parent_last,
-      $parent_email,
-      $parent_phone)";
+    VALUES ('$parent[first]', '$parent[last]', '$parent[email]', '$parent[phone]')";
     error_log($sql);
     $result = $conn->query($sql);
-    $parent_id = mysqli_insert_id($conn);
+    $parent['id'] = mysqli_insert_id($conn);
     if ($result == False) {
       // an error ooccured
       $registration_success = False;
@@ -93,39 +115,44 @@ require_once(TEMPLATES_PATH . "/header.php");
   else {
     // parent already exists in database
     $row = mysqli_fetch_assoc($result);
-    $parent_id = $row['id'];
+    $parent['id'] = $row['id'];
   }
 
-  error_log("register.php parent_id $parent_id");
+  echo("register.php parent_id $parent[id]");
 
   // check if camper exists in database
   $sql = "SELECT * FROM campers
-          WHERE first_name='$camper_first_name'
-          AND last_name='$camper_last_name'
-          AND dob='$camper_dob'";
+          WHERE first_name='$camper[first]'
+          AND last_name='$camper[last]'
+          AND dob=$camper[dob]";
   $result = $conn->query($sql);
-  $camper_id = NULL;
-  if (!$result) {
+  if ($result->num_rows === 0) {
+    echo "ERROR error inserting camper into database";
     // camper does not exist (or error?)
     $sql = "INSERT INTO campers (first_name, last_name, dob, grade, notes, parent1_id)
-    VALUES ('$camper_first_name', '$camper_last_name', '$camper_dob', '$camper_grade', '$camper_notes', $parent_id
-    )";
+    VALUES ('$camper[first]', '$camper[last]', $camper[dob], $camper[grade], '$camper[notes]', $parent[id])";
     $result = $conn->query($sql);
-    $camper_id = mysqli_insert_id($conn);
+    $camper['id'] = mysqli_insert_id($conn);
     if ($result == False) {
       $registration_success = False;
       echo '<span class="error">Error inserting camper into database. ' . mysqli_error($conn) . '</span>';
     }
   }
   else {
+    echo "here";
     // camper does exist in database
     $row = mysqli_fetch_assoc($result);
-    $camper_id = $row['id'];
+    $camper['id'] = $row['id'];
   }
+
+  $camp_session_id = $_POST["session"];
+
+  echo "camper[id]: $camper[id]";
+  echo "camp_session_id: $camp_session_id";
 
   // insert into registrations table
   $camp_session_id = $_POST['session'];
-  $sql = "INSERT INTO registrations (camper_id, session_id) VALUES ($camper_id, $camp_session_id)";
+  $sql = "INSERT INTO registrations (camper_id, session_id) VALUES ($camper[id], $camp_session_id)";
   $result = $conn->query($sql);
 
   if ($result == False) {
